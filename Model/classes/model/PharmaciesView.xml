@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PharmaciesView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="Pharmacies"
+    Entity="model.Pharmacies"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Pharmacies"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="PharmacyName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PharmacyName"
+    EntityUsage="Pharmacies"
+    AliasName="pharmacy_name"/>
+  <ViewAttribute
+    Name="Location"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Location"
+    EntityUsage="Pharmacies"
+    AliasName="location"/>
+  <ViewAttribute
+    Name="IsActive"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="Pharmacies"
+    AliasName="is_active"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="Pharmacies"
+    AliasName="description"/>
+</ViewObject>

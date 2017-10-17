@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkRadiologyExamRequestsRadiologyExamsLink"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  EntityAssociation="model.FkRadiologyExamRequestsRadiologyExamsAssoc">
+  <ViewLinkDefEnd
+    Name="RadilogyExamIdRadiologyExamRequestsView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.RadiologyExamRequestsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="RadilogyExamIdRadiologyExamRequestsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.RadiologyExamRequestsView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="RadiologyExamRequestsView"
+    Cardinality="-1"
+    Owner="model.RadiologyExamRequestsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="RadiologyExamRequestsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.RadiologyExamRequestsView.RadilogyExamId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

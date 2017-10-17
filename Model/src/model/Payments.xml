@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Payments"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="payments"
+  AliasName="Payments"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    ColumnName="id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="payments"
+    PrimaryKey="true"
+    IsUpdateable="while_insert">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ClientId"
+    ColumnName="client_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="payments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ClinicId"
+    ColumnName="clinic_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="payments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PaymentMethodId"
+    IsNotNull="true"
+    ColumnName="payment_method_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="payments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DatePaid"
+    IsNotNull="true"
+    ColumnName="date_paid"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="payments"/>
+  <Attribute
+    Name="AmountPaid"
+    IsNotNull="true"
+    ColumnName="amount_paid"
+    SQLType="FLOAT"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    TableName="payments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InvoiceId"
+    ColumnName="invoice_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="payments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="150"
+    ColumnName="description"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="payments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IsActive"
+    Domain="model.Enum"
+    ColumnName="is_active"
+    SQLType="STRUCT"
+    Type="model.common.Enum"
+    ColumnType="ENUM"
+    TableName="payments"
+    IsUpdateable="while_insert"/>
+  <Attribute
+    Name="PaymentReferenceNumber"
+    Precision="20"
+    ColumnName="payment_reference_number"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="payments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PaidByName"
+    Precision="150"
+    ColumnName="paid_by_name"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="payments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PaymentTimestamp"
+    ColumnName="payment_timestamp"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="payments"
+    IsUpdateable="while_insert"/>
+  <AccessorAttribute
+    Name="Payments"
+    Association="model.FkPaymentsPaymentMethodIdAssoc"
+    AssociationEnd="model.FkPaymentsPaymentMethodIdAssoc.Payments"
+    AssociationOtherEnd="model.FkPaymentsPaymentMethodIdAssoc.PaymentMethodIdPayments"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PaymentMethodIdPayments"
+    Association="model.FkPaymentsPaymentMethodIdAssoc"
+    AssociationEnd="model.FkPaymentsPaymentMethodIdAssoc.PaymentMethodIdPayments"
+    AssociationOtherEnd="model.FkPaymentsPaymentMethodIdAssoc.Payments"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Payments1"
+    Association="model.FkPaymentsInvoicesAssoc"
+    AssociationEnd="model.FkPaymentsInvoicesAssoc.Payments1"
+    AssociationOtherEnd="model.FkPaymentsInvoicesAssoc.InvoiceIdPayments"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="InvoiceIdPayments"
+    Association="model.FkPaymentsInvoicesAssoc"
+    AssociationEnd="model.FkPaymentsInvoicesAssoc.InvoiceIdPayments"
+    AssociationOtherEnd="model.FkPaymentsInvoicesAssoc.Payments1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Payments2"
+    Association="model.FkPaymentsClientsAssoc"
+    AssociationEnd="model.FkPaymentsClientsAssoc.Payments2"
+    AssociationOtherEnd="model.FkPaymentsClientsAssoc.ClientIdPayments"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ClientIdPayments"
+    Association="model.FkPaymentsClientsAssoc"
+    AssociationEnd="model.FkPaymentsClientsAssoc.ClientIdPayments"
+    AssociationOtherEnd="model.FkPaymentsClientsAssoc.Payments2"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Payments.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkPaymentsClients">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_payments__clients"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Payments.ClientId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkPaymentsInvoices">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_payments__invoices"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Payments.InvoiceId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkPaymentsPaymentMethodId">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_payments__payment_method_id"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Payments.PaymentMethodId"/>
+    </AttrArray>
+  </Key>
+</Entity>

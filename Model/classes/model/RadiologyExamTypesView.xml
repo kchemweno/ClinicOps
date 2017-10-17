@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="RadiologyExamTypesView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="RadiologyExamTypes"
+    Entity="model.RadiologyExamTypes"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="RadiologyExamTypes"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="RadiologyExam"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RadiologyExam"
+    EntityUsage="RadiologyExamTypes"
+    AliasName="radiology_exam"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="RadiologyExamTypes"
+    AliasName="description"/>
+  <ViewAttribute
+    Name="IsActive"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="RadiologyExamTypes"
+    AliasName="is_active"/>
+</ViewObject>

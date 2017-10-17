@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Prescriptions"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="prescriptions"
+  AliasName="Prescriptions"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="prescriptions"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DrugId"
+    IsNotNull="true"
+    ColumnName="drug_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AppointmentId"
+    ColumnName="appointment_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PrescribingMedicalStaffId"
+    ColumnName="prescribing_medical_staff_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PrescribedQuantity"
+    IsNotNull="true"
+    ColumnName="prescribed_quantity"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="150"
+    ColumnName="description"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AppointmentDate"
+    IsNotNull="true"
+    ColumnName="appointment_date"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="DATETIME"
+    TableName="prescriptions"/>
+  <Attribute
+    Name="DispensedQuantity"
+    IsNotNull="true"
+    ColumnName="dispensed_quantity"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DispensingStaffId"
+    ColumnName="dispensing_staff_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PharmacyId"
+    ColumnName="pharmacy_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UnitCost"
+    ColumnName="unit_cost"
+    SQLType="FLOAT"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Discount"
+    ColumnName="discount"
+    SQLType="FLOAT"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TotalCost"
+    ColumnName="total_cost"
+    SQLType="FLOAT"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BatchNumber"
+    Precision="50"
+    ColumnName="batch_number"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Indications"
+    Precision="100"
+    ColumnName="indications"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IsActive"
+    IsNotNull="true"
+    ColumnName="is_active"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="prescriptions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Prescriptions"
+    Association="model.FkPrescriptionsDrugsAssoc"
+    AssociationEnd="model.FkPrescriptionsDrugsAssoc.Prescriptions"
+    AssociationOtherEnd="model.FkPrescriptionsDrugsAssoc.DrugIdPrescriptions"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="DrugIdPrescriptions"
+    Association="model.FkPrescriptionsDrugsAssoc"
+    AssociationEnd="model.FkPrescriptionsDrugsAssoc.DrugIdPrescriptions"
+    AssociationOtherEnd="model.FkPrescriptionsDrugsAssoc.Prescriptions"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Prescriptions1"
+    Association="model.FkPrescriptionsAppointmentsAssoc"
+    AssociationEnd="model.FkPrescriptionsAppointmentsAssoc.Prescriptions1"
+    AssociationOtherEnd="model.FkPrescriptionsAppointmentsAssoc.AppointmentIdPrescriptions"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="AppointmentIdPrescriptions"
+    Association="model.FkPrescriptionsAppointmentsAssoc"
+    AssociationEnd="model.FkPrescriptionsAppointmentsAssoc.AppointmentIdPrescriptions"
+    AssociationOtherEnd="model.FkPrescriptionsAppointmentsAssoc.Prescriptions1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Prescriptions.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkPrescriptionsAppointments">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_prescriptions__appointments"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Prescriptions.AppointmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkPrescriptionsDrugs">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_prescriptions__drugs"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Prescriptions.DrugId"/>
+    </AttrArray>
+  </Key>
+</Entity>

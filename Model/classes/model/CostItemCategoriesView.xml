@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CostItemCategoriesView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="CostItemCategories"
+    Entity="model.CostItemCategories"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="CostItemCategories"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="CostItemCategoryName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CostItemCategoryName"
+    EntityUsage="CostItemCategories"
+    AliasName="cost_item_category_name"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="CostItemCategories"
+    AliasName="description"/>
+  <ViewAttribute
+    Name="IsActive"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="CostItemCategories"
+    AliasName="is_active"/>
+</ViewObject>

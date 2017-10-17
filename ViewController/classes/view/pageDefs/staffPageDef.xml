@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="staffPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MedicalStaffView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MedicalStaffView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="MedicalStaffView1Iterator" id="MedicalStaffView1">
+      <nodeDefinition DefName="model.MedicalStaffView" Name="MedicalStaffView10">
+        <AttrNames>
+          <Item Value="Firstname"/>
+          <Item Value="Lastname"/>
+          <Item Value="Othername"/>
+          <Item Value="Gender"/>
+          <Item Value="Phone"/>
+          <Item Value="Email"/>
+          <Item Value="DateOfBirth"/>
+          <Item Value="SpecialtyId"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

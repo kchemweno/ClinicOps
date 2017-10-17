@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="appointmentsPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AppointmentsView1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="AppointmentsView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="AppointmentsView1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="start_time" NDValue="#{bindings.AppointmentsView1.startDate}" NDType="java.sql.Timestamp"/>
+      <NamedData NDName="end_time" NDValue="#{bindings.AppointmentsView1.endDate}" NDType="java.sql.Timestamp"/>
+      <NamedData NDName="time_zone" NDValue="#{bindings.AppointmentsView1.timeZoneId}" NDType="java.lang.String"/>
+    </action>
+    <calendar IterBinding="AppointmentsView1Iterator" id="AppointmentsView1"
+              xmlns="http://xmlns.oracle.com/adf/faces/binding" ActionBindingName="ExecuteWithParams">
+      <nodeDefinition DefName="model.AppointmentsView">
+        <AttrNames>
+          <Item Type="id" Value="AppointmentId"/>
+          <Item Type="providerId" Value="AppointmentOwnerId"/>
+          <Item Type="title" Value="Description"/>
+          <Item Type="startTime" Value="StartDateTime"/>
+          <Item Type="endTime" Value="EndDateTime"/>
+          <Item Type="custom" Value="AppointmentId"/>
+          <Item Type="custom" Value="AppointmentOwnerId"/>
+          <Item Type="custom" Value="EndDateTime"/>
+          <Item Type="custom" Value="StartDateTime"/>
+          <Item Type="custom" Value="TimeZone"/>
+          <Item Type="custom" Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </calendar>
+  </bindings>
+</pageDefinition>

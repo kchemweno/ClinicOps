@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LabsView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="Labs"
+    Entity="model.Labs"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Labs"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="LabName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LabName"
+    EntityUsage="Labs"
+    AliasName="lab_name"/>
+  <ViewAttribute
+    Name="Location"
+    PrecisionRule="true"
+    EntityAttrName="Location"
+    EntityUsage="Labs"
+    AliasName="location"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="Labs"
+    AliasName="description"/>
+  <ViewAttribute
+    Name="IsActive"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="Labs"
+    AliasName="is_active"/>
+</ViewObject>

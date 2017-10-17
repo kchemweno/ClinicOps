@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkDrugsReceivedPharmaciesLink"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  EntityAssociation="model.FkDrugsReceivedPharmaciesAssoc">
+  <ViewLinkDefEnd
+    Name="PharmacyIdDrugsReceivedView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.DrugsReceivedView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="PharmacyIdDrugsReceivedView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.DrugsReceivedView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="DrugsReceivedView1"
+    Cardinality="-1"
+    Owner="model.DrugsReceivedView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="DrugsReceivedView1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.DrugsReceivedView.PharmacyId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

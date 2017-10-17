@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InventoryItemsView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="InventoryItems1"
+    Entity="model.InventoryItems"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="InventoryItems1"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="InventoryItem"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="InventoryItem"
+    EntityUsage="InventoryItems1"
+    AliasName="inventory_item"/>
+  <ViewAttribute
+    Name="InventoryItemType"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="InventoryItemType"
+    EntityUsage="InventoryItems1"
+    AliasName="inventory_item_type"/>
+  <ViewAttribute
+    Name="ReOrderLevel"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ReOrderLevel"
+    EntityUsage="InventoryItems1"
+    AliasName="re_order_level"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="InventoryItems1"
+    AliasName="description"/>
+  <ViewAttribute
+    Name="IsActive"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="InventoryItems1"
+    AliasName="is_active"/>
+</ViewObject>

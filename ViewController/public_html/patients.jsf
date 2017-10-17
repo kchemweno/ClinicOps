@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Patients" id="d1" binding="#{backingBeanScope.backing_patients.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_patients.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_patients.f1}">
+            <af:pageTemplate viewId="/main_template.jsf" id="pt1" binding="#{backingBeanScope.backing_patients.pt1}">
+                <f:facet name="content">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_patients.ps1}"
+                                      splitterPosition="730" inlineStyle="height:929px;">
+                        <f:facet name="first">
+                            <af:panelCollection id="pc2" binding="#{backingBeanScope.backing_patients.pc2}">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar">
+                                    <af:toolbar id="t2" binding="#{backingBeanScope.backing_patients.t2}">
+                                        <af:button text="Add" id="b1" binding="#{backingBeanScope.backing_patients.b1}"
+                                                   icon="#{resource['images:add_small_icon.png']}"/>
+                                        <af:spacer width="10" height="10" id="s1"
+                                                   binding="#{backingBeanScope.backing_patients.s1}"/>
+                                        <af:button text="Edit" id="b2" binding="#{backingBeanScope.backing_patients.b2}"
+                                                   icon="#{resource['images:edit_small_icon.png']}"
+                                                   inlineStyle="vertical-align:middle;"/>
+                                        <af:spacer width="10" height="10" id="s2"
+                                                   binding="#{backingBeanScope.backing_patients.s2}"/>
+                                        <af:button text="Delete" id="b3"
+                                                   binding="#{backingBeanScope.backing_patients.b3}"
+                                                   icon="#{resource['images:delete_small_icon.png']}"
+                                                   inlineStyle="vertical-align:middle;"/>
+                                    </af:toolbar>
+                                </f:facet>
+                                <af:table value="#{bindings.ClientsView1.collectionModel}" var="row"
+                                          rows="#{bindings.ClientsView1.rangeSize}"
+                                          emptyText="#{bindings.ClientsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.ClientsView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.ClientsView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.ClientsView1.rangeSize}" id="t1"
+                                          binding="#{backingBeanScope.backing_patients.t1}" editingMode="clickToEdit"
+                                          width="1651" columnStretching="multiple">
+                                    <af:column headerText="#{bindings.ClientsView1.hints.FirstName.label}" id="c1"
+                                               width="100">
+                                        <af:inputText value="#{row.bindings.FirstName.inputValue}"
+                                                      label="#{bindings.ClientsView1.hints.FirstName.label}"
+                                                      required="#{bindings.ClientsView1.hints.FirstName.mandatory}"
+                                                      columns="#{bindings.ClientsView1.hints.FirstName.displayWidth}"
+                                                      maximumLength="#{bindings.ClientsView1.hints.FirstName.precision}"
+                                                      shortDesc="#{bindings.ClientsView1.hints.FirstName.tooltip}"
+                                                      id="it1">
+                                            <f:validator binding="#{row.bindings.FirstName.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.ClientsView1.hints.LastName.label}" id="c2"
+                                               width="100">
+                                        <af:inputText value="#{row.bindings.LastName.inputValue}"
+                                                      label="#{bindings.ClientsView1.hints.LastName.label}"
+                                                      required="#{bindings.ClientsView1.hints.LastName.mandatory}"
+                                                      columns="#{bindings.ClientsView1.hints.LastName.displayWidth}"
+                                                      maximumLength="#{bindings.ClientsView1.hints.LastName.precision}"
+                                                      shortDesc="#{bindings.ClientsView1.hints.LastName.tooltip}"
+                                                      id="it2">
+                                            <f:validator binding="#{row.bindings.LastName.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.ClientsView1.hints.OtherNames.label}" id="c3"
+                                               width="100">
+                                        <af:inputText value="#{row.bindings.OtherNames.inputValue}"
+                                                      label="#{bindings.ClientsView1.hints.OtherNames.label}"
+                                                      required="#{bindings.ClientsView1.hints.OtherNames.mandatory}"
+                                                      columns="#{bindings.ClientsView1.hints.OtherNames.displayWidth}"
+                                                      maximumLength="#{bindings.ClientsView1.hints.OtherNames.precision}"
+                                                      shortDesc="#{bindings.ClientsView1.hints.OtherNames.tooltip}"
+                                                      id="it3">
+                                            <f:validator binding="#{row.bindings.OtherNames.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.ClientsView1.hints.Gender.label}" id="c4"
+                                               width="48">
+                                        <af:selectOneChoice value="#{row.bindings.Gender.inputValue}"
+                                                            label="#{row.bindings.Gender.label}"
+                                                            required="#{bindings.ClientsView1.hints.Gender.mandatory}"
+                                                            shortDesc="#{bindings.ClientsView1.hints.Gender.tooltip}"
+                                                            id="soc1">
+                                            <f:selectItems value="#{row.bindings.Gender.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.Gender.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.ClientsView1.hints.Mobile.label}" id="c5"
+                                               width="62">
+                                        <af:inputText value="#{row.bindings.Mobile.inputValue}"
+                                                      label="#{bindings.ClientsView1.hints.Mobile.label}"
+                                                      required="#{bindings.ClientsView1.hints.Mobile.mandatory}"
+                                                      columns="#{bindings.ClientsView1.hints.Mobile.displayWidth}"
+                                                      maximumLength="#{bindings.ClientsView1.hints.Mobile.precision}"
+                                                      shortDesc="#{bindings.ClientsView1.hints.Mobile.tooltip}"
+                                                      id="it5">
+                                            <f:validator binding="#{row.bindings.Mobile.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.ClientsView1.hints.Email.label}" id="c6"
+                                               width="145">
+                                        <af:inputText value="#{row.bindings.Email.inputValue}"
+                                                      label="#{bindings.ClientsView1.hints.Email.label}"
+                                                      required="#{bindings.ClientsView1.hints.Email.mandatory}"
+                                                      columns="#{bindings.ClientsView1.hints.Email.displayWidth}"
+                                                      maximumLength="#{bindings.ClientsView1.hints.Email.precision}"
+                                                      shortDesc="#{bindings.ClientsView1.hints.Email.tooltip}" id="it6">
+                                            <f:validator binding="#{row.bindings.Email.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.ClientsView1.hints.DateOfBirth.label}" id="c7"
+                                               width="87">
+                                        <af:inputDate value="#{row.bindings.DateOfBirth.inputValue}"
+                                                      label="#{bindings.ClientsView1.hints.DateOfBirth.label}"
+                                                      required="#{bindings.ClientsView1.hints.DateOfBirth.mandatory}"
+                                                      columns="#{bindings.ClientsView1.hints.DateOfBirth.displayWidth}"
+                                                      shortDesc="#{bindings.ClientsView1.hints.DateOfBirth.tooltip}"
+                                                      id="id1">
+                                            <f:validator binding="#{row.bindings.DateOfBirth.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.ClientsView1.hints.DateOfBirth.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.ClientsView1.hints.OrganisationId.label}" id="c8"
+                                               width="158">
+                                        <af:selectOneChoice value="#{row.bindings.OrganisationId.inputValue}"
+                                                            label="#{row.bindings.OrganisationId.label}"
+                                                            required="#{bindings.ClientsView1.hints.OrganisationId.mandatory}"
+                                                            shortDesc="#{bindings.ClientsView1.hints.OrganisationId.tooltip}"
+                                                            id="soc2">
+                                            <f:selectItems value="#{row.bindings.OrganisationId.items}" id="sii2"/>
+                                            <f:validator binding="#{row.bindings.OrganisationId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.ClientsView1.hints.ClientPicture.label}" id="c9"
+                                               width="100">
+                                        <af:inputText value="#{row.bindings.ClientPicture.inputValue}"
+                                                      label="#{bindings.ClientsView1.hints.ClientPicture.label}"
+                                                      required="#{bindings.ClientsView1.hints.ClientPicture.mandatory}"
+                                                      columns="#{bindings.ClientsView1.hints.ClientPicture.displayWidth}"
+                                                      maximumLength="#{bindings.ClientsView1.hints.ClientPicture.precision}"
+                                                      shortDesc="#{bindings.ClientsView1.hints.ClientPicture.tooltip}"
+                                                      id="it8">
+                                            <f:validator binding="#{row.bindings.ClientPicture.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.ClientsView1.hints.Consenting.label}" id="c10"
+                                               width="87">
+                                        <af:inputText value="#{row.bindings.Consenting.inputValue}"
+                                                      label="#{bindings.ClientsView1.hints.Consenting.label}"
+                                                      required="#{bindings.ClientsView1.hints.Consenting.mandatory}"
+                                                      columns="#{bindings.ClientsView1.hints.Consenting.displayWidth}"
+                                                      maximumLength="#{bindings.ClientsView1.hints.Consenting.precision}"
+                                                      shortDesc="#{bindings.ClientsView1.hints.Consenting.tooltip}"
+                                                      id="it9">
+                                            <f:validator binding="#{row.bindings.Consenting.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.ClientsView1.hints.Description.label}" id="c11"
+                                               width="113">
+                                        <af:inputText value="#{row.bindings.Description.inputValue}"
+                                                      label="#{bindings.ClientsView1.hints.Description.label}"
+                                                      required="#{bindings.ClientsView1.hints.Description.mandatory}"
+                                                      columns="#{bindings.ClientsView1.hints.Description.displayWidth}"
+                                                      maximumLength="#{bindings.ClientsView1.hints.Description.precision}"
+                                                      shortDesc="#{bindings.ClientsView1.hints.Description.tooltip}"
+                                                      id="it10">
+                                            <f:validator binding="#{row.bindings.Description.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                                <f:facet name="statusbar"/>
+                            </af:panelCollection>
+                        </f:facet>
+                        <f:facet name="second"/>
+                    </af:panelSplitter>
+                </f:facet>
+                
+                <f:facet name="branding"/>
+                <f:facet name="accordion_menu"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_patients-->
+</f:view>

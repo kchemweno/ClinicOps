@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="pharmacyPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PrescriptionsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PrescriptionsView1Iterator"/>
+    <iterator Binds="DrugsView1" RangeSize="25" DataControl="AppModuleDataControl" id="DrugsView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PrescriptionsView1Iterator" id="PrescriptionsView1">
+      <nodeDefinition DefName="model.PrescriptionsView" Name="PrescriptionsView10">
+        <AttrNames>
+          <Item Value="DrugId"/>
+          <Item Value="PrescribingMedicalStaffId"/>
+          <Item Value="DispensingStaffId"/>
+          <Item Value="PrescribedQuantity"/>
+          <Item Value="AppointmentDate"/>
+          <Item Value="DispensedQuantity"/>
+          <Item Value="PharmacyId"/>
+          <Item Value="UnitCost"/>
+          <Item Value="Discount"/>
+          <Item Value="TotalCost"/>
+          <Item Value="BatchNumber"/>
+          <Item Value="Indications"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="DrugsView1Iterator" id="DrugsView1">
+      <nodeDefinition DefName="model.DrugsView" Name="DrugsView10">
+        <AttrNames>
+          <Item Value="BrandName"/>
+          <Item Value="GenericName"/>
+          <Item Value="DosageForm"/>
+          <Item Value="Strength"/>
+          <Item Value="ReOrderLevel"/>
+          <Item Value="PackageType"/>
+          <Item Value="ShelfLifeMonths"/>
+          <Item Value="Manufacturer"/>
+          <Item Value="RouteOfAdministration"/>
+          <Item Value="PackageSize"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

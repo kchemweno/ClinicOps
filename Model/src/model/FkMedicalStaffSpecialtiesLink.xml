@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkMedicalStaffSpecialtiesLink"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  EntityAssociation="model.FkMedicalStaffSpecialtiesAssoc">
+  <ViewLinkDefEnd
+    Name="SpecialtyIdMedicalStaffView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.MedicalStaffView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="SpecialtyIdMedicalStaffView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.MedicalStaffView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="MedicalStaffView"
+    Cardinality="-1"
+    Owner="model.MedicalStaffView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="MedicalStaffView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.MedicalStaffView.SpecialtyId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

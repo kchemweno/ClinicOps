@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ClientsView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="ClientsView1"
+    ViewObjectName="model.ClientsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="OrganisationsView1"
+    ViewObjectName="model.OrganisationsView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Gender"
+    ListVOName="ClientsView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Gender"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Gender"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Gender"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_OrganisationId"
+    ListVOName="OrganisationsView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OrganisationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="OrganisationName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Clients"
+    Entity="model.Clients"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Clients"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="FirstName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="Clients"
+    AliasName="first_name"/>
+  <ViewAttribute
+    Name="LastName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="Clients"
+    AliasName="last_name"/>
+  <ViewAttribute
+    Name="OtherNames"
+    PrecisionRule="true"
+    EntityAttrName="OtherNames"
+    EntityUsage="Clients"
+    AliasName="other_names"/>
+  <ViewAttribute
+    Name="Mobile"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Mobile"
+    EntityUsage="Clients"
+    AliasName="mobile"/>
+  <ViewAttribute
+    Name="Consenting"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Consenting"
+    EntityUsage="Clients"
+    AliasName="consenting"/>
+  <ViewAttribute
+    Name="Gender"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Gender"
+    EntityUsage="Clients"
+    AliasName="gender"
+    LOVName="LOV_Gender">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="radio"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Email"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="Clients"
+    AliasName="email"/>
+  <ViewAttribute
+    Name="DateOfBirth"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DateOfBirth"
+    EntityUsage="Clients"
+    AliasName="date_of_birth"/>
+  <ViewAttribute
+    Name="OrganisationId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="OrganisationId"
+    EntityUsage="Clients"
+    AliasName="organisation_id"
+    LOVName="LOV_OrganisationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ClientPicture"
+    PrecisionRule="true"
+    EntityAttrName="ClientPicture"
+    EntityUsage="Clients"
+    AliasName="client_picture"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="Clients"
+    AliasName="description"/>
+  <ViewAttribute
+    Name="IsActive"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="Clients"
+    AliasName="is_active"/>
+  <ViewLinkAccessor
+    Name="ClientsView"
+    ViewLink="model.FkClientsOrganisationsLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

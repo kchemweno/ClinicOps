@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.0.31" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory className="oracle.adfinternal.view.faces.model.binding.ExtendedFacesBindingDefFactoryImpl"
+             nameSpace="http://xmlns.oracle.com/adf/faces/binding"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/patients.jsf" usageId="view_patientsPageDef"/>
+    <page path="/pharmacy.jsf" usageId="view_pharmacyPageDef"/>
+    <page path="/radiology.jsf" usageId="view_radiologyPageDef"/>
+    <page path="/lab.jsf" usageId="view_labPageDef"/>
+    <page path="/payment.jsf" usageId="view_paymentPageDef"/>
+    <page path="/staff.jsf" usageId="view_staffPageDef"/>
+    <page path="/appointments.jsf" usageId="view_appointmentsPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_patientsPageDef" path="view.pageDefs.patientsPageDef"/>
+    <page id="view_pharmacyPageDef" path="view.pageDefs.pharmacyPageDef"/>
+    <page id="view_radiologyPageDef" path="view.pageDefs.radiologyPageDef"/>
+    <page id="view_labPageDef" path="view.pageDefs.labPageDef"/>
+    <page id="view_paymentPageDef" path="view.pageDefs.paymentPageDef"/>
+    <page id="view_staffPageDef" path="view.pageDefs.staffPageDef"/>
+    <page id="view_appointmentsPageDef" path="view.pageDefs.appointmentsPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

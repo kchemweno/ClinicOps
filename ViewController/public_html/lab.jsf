@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Lab" id="d1" binding="#{backingBeanScope.backing_lab.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_lab.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_lab.f1}">
+            <af:pageTemplate viewId="/main_template.jsf" id="pt1" binding="#{backingBeanScope.backing_lab.pt1}">
+                <f:facet name="content">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_lab.ps1}" splitterPosition="719">
+                        <f:facet name="first">
+                            <af:panelCollection id="pc1" binding="#{backingBeanScope.backing_lab.pc1}">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar"/>
+                                <af:table value="#{bindings.LabTestRequestsView1.collectionModel}" var="row"
+                                          rows="#{bindings.LabTestRequestsView1.rangeSize}"
+                                          emptyText="#{bindings.LabTestRequestsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.LabTestRequestsView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.LabTestRequestsView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.LabTestRequestsView1.rangeSize}"
+                                          id="t1" binding="#{backingBeanScope.backing_lab.t1}">
+                                    <af:column headerText="#{bindings.LabTestRequestsView1.hints.ClientId.label}"
+                                               id="c1">
+                                        <af:selectOneChoice value="#{row.bindings.ClientId.inputValue}"
+                                                            label="#{row.bindings.ClientId.label}"
+                                                            required="#{bindings.LabTestRequestsView1.hints.ClientId.mandatory}"
+                                                            shortDesc="#{bindings.LabTestRequestsView1.hints.ClientId.tooltip}"
+                                                            id="soc1">
+                                            <f:selectItems value="#{row.bindings.ClientId.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.ClientId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.LabTestRequestsView1.hints.DateOfLabTestRequest.label}"
+                                               id="c2">
+                                        <af:inputDate value="#{row.bindings.DateOfLabTestRequest.inputValue}"
+                                                      label="#{bindings.LabTestRequestsView1.hints.DateOfLabTestRequest.label}"
+                                                      required="#{bindings.LabTestRequestsView1.hints.DateOfLabTestRequest.mandatory}"
+                                                      columns="#{bindings.LabTestRequestsView1.hints.DateOfLabTestRequest.displayWidth}"
+                                                      shortDesc="#{bindings.LabTestRequestsView1.hints.DateOfLabTestRequest.tooltip}"
+                                                      id="id1">
+                                            <f:validator binding="#{row.bindings.DateOfLabTestRequest.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.LabTestRequestsView1.hints.DateOfLabTestRequest.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.LabTestRequestsView1.hints.LabId.label}" id="c3">
+                                        <af:selectOneChoice value="#{row.bindings.LabId.inputValue}"
+                                                            label="#{row.bindings.LabId.label}"
+                                                            required="#{bindings.LabTestRequestsView1.hints.LabId.mandatory}"
+                                                            shortDesc="#{bindings.LabTestRequestsView1.hints.LabId.tooltip}"
+                                                            id="soc2">
+                                            <f:selectItems value="#{row.bindings.LabId.items}" id="si2"/>
+                                            <f:validator binding="#{row.bindings.LabId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.LabTestRequestsView1.hints.LabTestId.label}"
+                                               id="c4">
+                                        <af:selectOneChoice value="#{row.bindings.LabTestId.inputValue}"
+                                                            label="#{row.bindings.LabTestId.label}"
+                                                            required="#{bindings.LabTestRequestsView1.hints.LabTestId.mandatory}"
+                                                            shortDesc="#{bindings.LabTestRequestsView1.hints.LabTestId.tooltip}"
+                                                            id="soc3">
+                                            <f:selectItems value="#{row.bindings.LabTestId.items}" id="si3"/>
+                                            <f:validator binding="#{row.bindings.LabTestId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.LabTestRequestsView1.hints.RequestingMedicalStaffId.label}"
+                                               id="c5">
+                                        <af:selectOneChoice value="#{row.bindings.RequestingMedicalStaffId.inputValue}"
+                                                            label="#{row.bindings.RequestingMedicalStaffId.label}"
+                                                            required="#{bindings.LabTestRequestsView1.hints.RequestingMedicalStaffId.mandatory}"
+                                                            shortDesc="#{bindings.LabTestRequestsView1.hints.RequestingMedicalStaffId.tooltip}"
+                                                            id="soc4">
+                                            <f:selectItems value="#{row.bindings.RequestingMedicalStaffId.items}"
+                                                           id="si4"/>
+                                            <f:validator binding="#{row.bindings.RequestingMedicalStaffId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.LabTestRequestsView1.hints.ImplementingMedicalStaffId.label}"
+                                               id="c6">
+                                        <af:selectOneChoice value="#{row.bindings.ImplementingMedicalStaffId.inputValue}"
+                                                            label="#{row.bindings.ImplementingMedicalStaffId.label}"
+                                                            required="#{bindings.LabTestRequestsView1.hints.ImplementingMedicalStaffId.mandatory}"
+                                                            shortDesc="#{bindings.LabTestRequestsView1.hints.ImplementingMedicalStaffId.tooltip}"
+                                                            id="soc5">
+                                            <f:selectItems value="#{row.bindings.ImplementingMedicalStaffId.items}"
+                                                           id="si5"/>
+                                            <f:validator binding="#{row.bindings.ImplementingMedicalStaffId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.LabTestRequestsView1.hints.DateOfLabTestResults.label}"
+                                               id="c7">
+                                        <af:inputDate value="#{row.bindings.DateOfLabTestResults.inputValue}"
+                                                      label="#{bindings.LabTestRequestsView1.hints.DateOfLabTestResults.label}"
+                                                      required="#{bindings.LabTestRequestsView1.hints.DateOfLabTestResults.mandatory}"
+                                                      columns="#{bindings.LabTestRequestsView1.hints.DateOfLabTestResults.displayWidth}"
+                                                      shortDesc="#{bindings.LabTestRequestsView1.hints.DateOfLabTestResults.tooltip}"
+                                                      id="id2">
+                                            <f:validator binding="#{row.bindings.DateOfLabTestResults.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.LabTestRequestsView1.hints.DateOfLabTestResults.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.LabTestRequestsView1.hints.TestResults.label}"
+                                               id="c8">
+                                        <af:inputText value="#{row.bindings.TestResults.inputValue}"
+                                                      label="#{bindings.LabTestRequestsView1.hints.TestResults.label}"
+                                                      required="#{bindings.LabTestRequestsView1.hints.TestResults.mandatory}"
+                                                      columns="#{bindings.LabTestRequestsView1.hints.TestResults.displayWidth}"
+                                                      maximumLength="#{bindings.LabTestRequestsView1.hints.TestResults.precision}"
+                                                      shortDesc="#{bindings.LabTestRequestsView1.hints.TestResults.tooltip}"
+                                                      id="it1">
+                                            <f:validator binding="#{row.bindings.TestResults.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.LabTestRequestsView1.hints.Description.label}"
+                                               id="c9">
+                                        <af:inputText value="#{row.bindings.Description.inputValue}"
+                                                      label="#{bindings.LabTestRequestsView1.hints.Description.label}"
+                                                      required="#{bindings.LabTestRequestsView1.hints.Description.mandatory}"
+                                                      columns="#{bindings.LabTestRequestsView1.hints.Description.displayWidth}"
+                                                      maximumLength="#{bindings.LabTestRequestsView1.hints.Description.precision}"
+                                                      shortDesc="#{bindings.LabTestRequestsView1.hints.Description.tooltip}"
+                                                      id="it2">
+                                            <f:validator binding="#{row.bindings.Description.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                                <f:facet name="statusbar"/>
+                            </af:panelCollection>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelDashboard id="pd1" binding="#{backingBeanScope.backing_lab.pd1}" columns="1"
+                                               rowHeight="300px">
+                                <af:panelBox text="Cients On Queue" id="pb1" binding="#{backingBeanScope.backing_lab.pb1}">
+                                    <f:facet name="toolbar"/>
+                                </af:panelBox>
+                                <af:panelBox text="Clients Served" id="pb2" binding="#{backingBeanScope.backing_lab.pb2}">
+                                    <f:facet name="toolbar"/>
+                                </af:panelBox>
+                            </af:panelDashboard>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+                <f:facet name="accordion_menu"/>
+                <f:facet name="branding"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_lab-->
+</f:view>

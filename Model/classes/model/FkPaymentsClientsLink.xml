@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkPaymentsClientsLink"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  EntityAssociation="model.FkPaymentsClientsAssoc">
+  <ViewLinkDefEnd
+    Name="ClientIdPaymentsView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.PaymentsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ClientIdPaymentsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.PaymentsView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="PaymentsView2"
+    Cardinality="-1"
+    Owner="model.PaymentsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="PaymentsView2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.PaymentsView.ClientId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

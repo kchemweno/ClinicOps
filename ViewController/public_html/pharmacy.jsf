@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Pharmacy" id="d1" binding="#{backingBeanScope.backing_pharmacy.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_pharmacy.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_pharmacy.f1}">
+            <af:pageTemplate viewId="/main_template.jsf" id="pt1" binding="#{backingBeanScope.backing_pharmacy.pt1}">
+                <f:facet name="content">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_pharmacy.ps1}"
+                                      splitterPosition="667">
+                        <f:facet name="first">
+                            <af:panelSplitter id="ps2" binding="#{backingBeanScope.backing_pharmacy.ps2}"
+                                              orientation="vertical" splitterPosition="483">
+                                <f:facet name="first">
+                                    <af:panelCollection id="pc1" binding="#{backingBeanScope.backing_pharmacy.pc1}">
+                                        <f:facet name="menus"/>
+                                        <f:facet name="toolbar"/>
+                                        <af:table value="#{bindings.PrescriptionsView1.collectionModel}" var="row"
+                                                  rows="#{bindings.PrescriptionsView1.rangeSize}"
+                                                  emptyText="#{bindings.PrescriptionsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.PrescriptionsView1.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.PrescriptionsView1.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.PrescriptionsView1.rangeSize}" id="t1"
+                                                  binding="#{backingBeanScope.backing_pharmacy.t1}" width="582">
+                                            <af:column headerText="#{bindings.PrescriptionsView1.hints.DrugId.label}"
+                                                       id="c1" width="80">
+                                                <af:inputText value="#{row.bindings.DrugId.inputValue}"
+                                                              label="#{bindings.PrescriptionsView1.hints.DrugId.label}"
+                                                              required="#{bindings.PrescriptionsView1.hints.DrugId.mandatory}"
+                                                              columns="#{bindings.PrescriptionsView1.hints.DrugId.displayWidth}"
+                                                              maximumLength="#{bindings.PrescriptionsView1.hints.DrugId.precision}"
+                                                              shortDesc="#{bindings.PrescriptionsView1.hints.DrugId.tooltip}"
+                                                              id="it1">
+                                                    <f:validator binding="#{row.bindings.DrugId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.PrescriptionsView1.hints.DrugId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.PrescriptionsView1.hints.PrescribingMedicalStaffId.label}"
+                                                       id="c2" width="120">
+                                                <af:inputText value="#{row.bindings.PrescribingMedicalStaffId.inputValue}"
+                                                              label="#{bindings.PrescriptionsView1.hints.PrescribingMedicalStaffId.label}"
+                                                              required="#{bindings.PrescriptionsView1.hints.PrescribingMedicalStaffId.mandatory}"
+                                                              columns="#{bindings.PrescriptionsView1.hints.PrescribingMedicalStaffId.displayWidth}"
+                                                              maximumLength="#{bindings.PrescriptionsView1.hints.PrescribingMedicalStaffId.precision}"
+                                                              shortDesc="#{bindings.PrescriptionsView1.hints.PrescribingMedicalStaffId.tooltip}"
+                                                              id="it2">
+                                                    <f:validator binding="#{row.bindings.PrescribingMedicalStaffId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.PrescriptionsView1.hints.PrescribingMedicalStaffId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.PrescriptionsView1.hints.DispensingStaffId.label}"
+                                                       id="c3" width="100">
+                                                <af:inputText value="#{row.bindings.DispensingStaffId.inputValue}"
+                                                              label="#{bindings.PrescriptionsView1.hints.DispensingStaffId.label}"
+                                                              required="#{bindings.PrescriptionsView1.hints.DispensingStaffId.mandatory}"
+                                                              columns="#{bindings.PrescriptionsView1.hints.DispensingStaffId.displayWidth}"
+                                                              maximumLength="#{bindings.PrescriptionsView1.hints.DispensingStaffId.precision}"
+                                                              shortDesc="#{bindings.PrescriptionsView1.hints.DispensingStaffId.tooltip}"
+                                                              id="it3">
+                                                    <f:validator binding="#{row.bindings.DispensingStaffId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.PrescriptionsView1.hints.DispensingStaffId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.PrescriptionsView1.hints.PrescribedQuantity.label}"
+                                                       id="c4" width="100">
+                                                <af:inputText value="#{row.bindings.PrescribedQuantity.inputValue}"
+                                                              label="#{bindings.PrescriptionsView1.hints.PrescribedQuantity.label}"
+                                                              required="#{bindings.PrescriptionsView1.hints.PrescribedQuantity.mandatory}"
+                                                              columns="#{bindings.PrescriptionsView1.hints.PrescribedQuantity.displayWidth}"
+                                                              maximumLength="#{bindings.PrescriptionsView1.hints.PrescribedQuantity.precision}"
+                                                              shortDesc="#{bindings.PrescriptionsView1.hints.PrescribedQuantity.tooltip}"
+                                                              id="it4">
+                                                    <f:validator binding="#{row.bindings.PrescribedQuantity.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.PrescriptionsView1.hints.PrescribedQuantity.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.PrescriptionsView1.hints.AppointmentDate.label}"
+                                                       id="c5" width="100">
+                                                <af:inputDate value="#{row.bindings.AppointmentDate.inputValue}"
+                                                              label="#{bindings.PrescriptionsView1.hints.AppointmentDate.label}"
+                                                              required="#{bindings.PrescriptionsView1.hints.AppointmentDate.mandatory}"
+                                                              columns="#{bindings.PrescriptionsView1.hints.AppointmentDate.displayWidth}"
+                                                              shortDesc="#{bindings.PrescriptionsView1.hints.AppointmentDate.tooltip}"
+                                                              id="id1">
+                                                    <f:validator binding="#{row.bindings.AppointmentDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.PrescriptionsView1.hints.AppointmentDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.PrescriptionsView1.hints.DispensedQuantity.label}"
+                                                       id="c6" width="100">
+                                                <af:inputText value="#{row.bindings.DispensedQuantity.inputValue}"
+                                                              label="#{bindings.PrescriptionsView1.hints.DispensedQuantity.label}"
+                                                              required="#{bindings.PrescriptionsView1.hints.DispensedQuantity.mandatory}"
+                                                              columns="#{bindings.PrescriptionsView1.hints.DispensedQuantity.displayWidth}"
+                                                              maximumLength="#{bindings.PrescriptionsView1.hints.DispensedQuantity.precision}"
+                                                              shortDesc="#{bindings.PrescriptionsView1.hints.DispensedQuantity.tooltip}"
+                                                              id="it5">
+                                                    <f:validator binding="#{row.bindings.DispensedQuantity.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.PrescriptionsView1.hints.DispensedQuantity.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.PrescriptionsView1.hints.PharmacyId.label}"
+                                                       id="c7">
+                                                <af:inputText value="#{row.bindings.PharmacyId.inputValue}"
+                                                              label="#{bindings.PrescriptionsView1.hints.PharmacyId.label}"
+                                                              required="#{bindings.PrescriptionsView1.hints.PharmacyId.mandatory}"
+                                                              columns="#{bindings.PrescriptionsView1.hints.PharmacyId.displayWidth}"
+                                                              maximumLength="#{bindings.PrescriptionsView1.hints.PharmacyId.precision}"
+                                                              shortDesc="#{bindings.PrescriptionsView1.hints.PharmacyId.tooltip}"
+                                                              id="it6">
+                                                    <f:validator binding="#{row.bindings.PharmacyId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.PrescriptionsView1.hints.PharmacyId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.PrescriptionsView1.hints.UnitCost.label}"
+                                                       id="c8">
+                                                <af:inputText value="#{row.bindings.UnitCost.inputValue}"
+                                                              label="#{bindings.PrescriptionsView1.hints.UnitCost.label}"
+                                                              required="#{bindings.PrescriptionsView1.hints.UnitCost.mandatory}"
+                                                              columns="#{bindings.PrescriptionsView1.hints.UnitCost.displayWidth}"
+                                                              maximumLength="#{bindings.PrescriptionsView1.hints.UnitCost.precision}"
+                                                              shortDesc="#{bindings.PrescriptionsView1.hints.UnitCost.tooltip}"
+                                                              id="it7">
+                                                    <f:validator binding="#{row.bindings.UnitCost.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.PrescriptionsView1.hints.UnitCost.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.PrescriptionsView1.hints.Discount.label}"
+                                                       id="c9">
+                                                <af:inputText value="#{row.bindings.Discount.inputValue}"
+                                                              label="#{bindings.PrescriptionsView1.hints.Discount.label}"
+                                                              required="#{bindings.PrescriptionsView1.hints.Discount.mandatory}"
+                                                              columns="#{bindings.PrescriptionsView1.hints.Discount.displayWidth}"
+                                                              maximumLength="#{bindings.PrescriptionsView1.hints.Discount.precision}"
+                                                              shortDesc="#{bindings.PrescriptionsView1.hints.Discount.tooltip}"
+                                                              id="it8">
+                                                    <f:validator binding="#{row.bindings.Discount.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.PrescriptionsView1.hints.Discount.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.PrescriptionsView1.hints.TotalCost.label}"
+                                                       id="c10">
+                                                <af:inputText value="#{row.bindings.TotalCost.inputValue}"
+                                                              label="#{bindings.PrescriptionsView1.hints.TotalCost.label}"
+                                                              required="#{bindings.PrescriptionsView1.hints.TotalCost.mandatory}"
+                                                              columns="#{bindings.PrescriptionsView1.hints.TotalCost.displayWidth}"
+                                                              maximumLength="#{bindings.PrescriptionsView1.hints.TotalCost.precision}"
+                                                              shortDesc="#{bindings.PrescriptionsView1.hints.TotalCost.tooltip}"
+                                                              id="it9">
+                                                    <f:validator binding="#{row.bindings.TotalCost.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.PrescriptionsView1.hints.TotalCost.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.PrescriptionsView1.hints.BatchNumber.label}"
+                                                       id="c11">
+                                                <af:inputText value="#{row.bindings.BatchNumber.inputValue}"
+                                                              label="#{bindings.PrescriptionsView1.hints.BatchNumber.label}"
+                                                              required="#{bindings.PrescriptionsView1.hints.BatchNumber.mandatory}"
+                                                              columns="#{bindings.PrescriptionsView1.hints.BatchNumber.displayWidth}"
+                                                              maximumLength="#{bindings.PrescriptionsView1.hints.BatchNumber.precision}"
+                                                              shortDesc="#{bindings.PrescriptionsView1.hints.BatchNumber.tooltip}"
+                                                              id="it10">
+                                                    <f:validator binding="#{row.bindings.BatchNumber.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.PrescriptionsView1.hints.Indications.label}"
+                                                       id="c12">
+                                                <af:inputText value="#{row.bindings.Indications.inputValue}"
+                                                              label="#{bindings.PrescriptionsView1.hints.Indications.label}"
+                                                              required="#{bindings.PrescriptionsView1.hints.Indications.mandatory}"
+                                                              columns="#{bindings.PrescriptionsView1.hints.Indications.displayWidth}"
+                                                              maximumLength="#{bindings.PrescriptionsView1.hints.Indications.precision}"
+                                                              shortDesc="#{bindings.PrescriptionsView1.hints.Indications.tooltip}"
+                                                              id="it11">
+                                                    <f:validator binding="#{row.bindings.Indications.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.PrescriptionsView1.hints.Description.label}"
+                                                       id="c13">
+                                                <af:inputText value="#{row.bindings.Description.inputValue}"
+                                                              label="#{bindings.PrescriptionsView1.hints.Description.label}"
+                                                              required="#{bindings.PrescriptionsView1.hints.Description.mandatory}"
+                                                              columns="#{bindings.PrescriptionsView1.hints.Description.displayWidth}"
+                                                              maximumLength="#{bindings.PrescriptionsView1.hints.Description.precision}"
+                                                              shortDesc="#{bindings.PrescriptionsView1.hints.Description.tooltip}"
+                                                              id="it12">
+                                                    <f:validator binding="#{row.bindings.Description.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                        </af:table>
+                                        <f:facet name="statusbar"/>
+                                    </af:panelCollection>
+                                </f:facet>
+                                <f:facet name="second"/>
+                            </af:panelSplitter>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelDashboard id="pd1" binding="#{backingBeanScope.backing_pharmacy.pd1}" columns="1"
+                                               rowHeight="300px">
+                                <af:panelBox text="Drugs" id="pb1"
+                                             binding="#{backingBeanScope.backing_pharmacy.pb1}">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelCollection id="pc2" binding="#{backingBeanScope.backing_pharmacy.pc2}">
+                                        <f:facet name="menus"/>
+                                        <f:facet name="toolbar"/>
+                                        <af:table value="#{bindings.DrugsView1.collectionModel}" var="row"
+                                                  rows="#{bindings.DrugsView1.rangeSize}"
+                                                  emptyText="#{bindings.DrugsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.DrugsView1.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.DrugsView1.collectionModel.makeCurrent}"
+                                                  rowSelection="single" fetchSize="#{bindings.DrugsView1.rangeSize}"
+                                                  id="t2" binding="#{backingBeanScope.backing_pharmacy.t2}">
+                                            <af:column headerText="#{bindings.DrugsView1.hints.BrandName.label}"
+                                                       id="c14">
+                                                <af:inputText value="#{row.bindings.BrandName.inputValue}"
+                                                              label="#{bindings.DrugsView1.hints.BrandName.label}"
+                                                              required="#{bindings.DrugsView1.hints.BrandName.mandatory}"
+                                                              columns="#{bindings.DrugsView1.hints.BrandName.displayWidth}"
+                                                              maximumLength="#{bindings.DrugsView1.hints.BrandName.precision}"
+                                                              shortDesc="#{bindings.DrugsView1.hints.BrandName.tooltip}"
+                                                              id="it13">
+                                                    <f:validator binding="#{row.bindings.BrandName.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.DrugsView1.hints.GenericName.label}"
+                                                       id="c15">
+                                                <af:inputText value="#{row.bindings.GenericName.inputValue}"
+                                                              label="#{bindings.DrugsView1.hints.GenericName.label}"
+                                                              required="#{bindings.DrugsView1.hints.GenericName.mandatory}"
+                                                              columns="#{bindings.DrugsView1.hints.GenericName.displayWidth}"
+                                                              maximumLength="#{bindings.DrugsView1.hints.GenericName.precision}"
+                                                              shortDesc="#{bindings.DrugsView1.hints.GenericName.tooltip}"
+                                                              id="it14">
+                                                    <f:validator binding="#{row.bindings.GenericName.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.DrugsView1.hints.DosageForm.label}"
+                                                       id="c16">
+                                                <af:inputText value="#{row.bindings.DosageForm.inputValue}"
+                                                              label="#{bindings.DrugsView1.hints.DosageForm.label}"
+                                                              required="#{bindings.DrugsView1.hints.DosageForm.mandatory}"
+                                                              columns="#{bindings.DrugsView1.hints.DosageForm.displayWidth}"
+                                                              maximumLength="#{bindings.DrugsView1.hints.DosageForm.precision}"
+                                                              shortDesc="#{bindings.DrugsView1.hints.DosageForm.tooltip}"
+                                                              id="it15">
+                                                    <f:validator binding="#{row.bindings.DosageForm.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.DrugsView1.hints.Strength.label}"
+                                                       id="c17">
+                                                <af:inputText value="#{row.bindings.Strength.inputValue}"
+                                                              label="#{bindings.DrugsView1.hints.Strength.label}"
+                                                              required="#{bindings.DrugsView1.hints.Strength.mandatory}"
+                                                              columns="#{bindings.DrugsView1.hints.Strength.displayWidth}"
+                                                              maximumLength="#{bindings.DrugsView1.hints.Strength.precision}"
+                                                              shortDesc="#{bindings.DrugsView1.hints.Strength.tooltip}"
+                                                              id="it16">
+                                                    <f:validator binding="#{row.bindings.Strength.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.DrugsView1.hints.ReOrderLevel.label}"
+                                                       id="c18">
+                                                <af:inputText value="#{row.bindings.ReOrderLevel.inputValue}"
+                                                              label="#{bindings.DrugsView1.hints.ReOrderLevel.label}"
+                                                              required="#{bindings.DrugsView1.hints.ReOrderLevel.mandatory}"
+                                                              columns="#{bindings.DrugsView1.hints.ReOrderLevel.displayWidth}"
+                                                              maximumLength="#{bindings.DrugsView1.hints.ReOrderLevel.precision}"
+                                                              shortDesc="#{bindings.DrugsView1.hints.ReOrderLevel.tooltip}"
+                                                              id="it17">
+                                                    <f:validator binding="#{row.bindings.ReOrderLevel.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.DrugsView1.hints.ReOrderLevel.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.DrugsView1.hints.PackageType.label}"
+                                                       id="c19">
+                                                <af:inputText value="#{row.bindings.PackageType.inputValue}"
+                                                              label="#{bindings.DrugsView1.hints.PackageType.label}"
+                                                              required="#{bindings.DrugsView1.hints.PackageType.mandatory}"
+                                                              columns="#{bindings.DrugsView1.hints.PackageType.displayWidth}"
+                                                              maximumLength="#{bindings.DrugsView1.hints.PackageType.precision}"
+                                                              shortDesc="#{bindings.DrugsView1.hints.PackageType.tooltip}"
+                                                              id="it18">
+                                                    <f:validator binding="#{row.bindings.PackageType.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.DrugsView1.hints.ShelfLifeMonths.label}"
+                                                       id="c20">
+                                                <af:inputText value="#{row.bindings.ShelfLifeMonths.inputValue}"
+                                                              label="#{bindings.DrugsView1.hints.ShelfLifeMonths.label}"
+                                                              required="#{bindings.DrugsView1.hints.ShelfLifeMonths.mandatory}"
+                                                              columns="#{bindings.DrugsView1.hints.ShelfLifeMonths.displayWidth}"
+                                                              maximumLength="#{bindings.DrugsView1.hints.ShelfLifeMonths.precision}"
+                                                              shortDesc="#{bindings.DrugsView1.hints.ShelfLifeMonths.tooltip}"
+                                                              id="it19">
+                                                    <f:validator binding="#{row.bindings.ShelfLifeMonths.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.DrugsView1.hints.ShelfLifeMonths.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.DrugsView1.hints.Manufacturer.label}"
+                                                       id="c21">
+                                                <af:inputText value="#{row.bindings.Manufacturer.inputValue}"
+                                                              label="#{bindings.DrugsView1.hints.Manufacturer.label}"
+                                                              required="#{bindings.DrugsView1.hints.Manufacturer.mandatory}"
+                                                              columns="#{bindings.DrugsView1.hints.Manufacturer.displayWidth}"
+                                                              maximumLength="#{bindings.DrugsView1.hints.Manufacturer.precision}"
+                                                              shortDesc="#{bindings.DrugsView1.hints.Manufacturer.tooltip}"
+                                                              id="it20">
+                                                    <f:validator binding="#{row.bindings.Manufacturer.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.DrugsView1.hints.RouteOfAdministration.label}"
+                                                       id="c22">
+                                                <af:inputText value="#{row.bindings.RouteOfAdministration.inputValue}"
+                                                              label="#{bindings.DrugsView1.hints.RouteOfAdministration.label}"
+                                                              required="#{bindings.DrugsView1.hints.RouteOfAdministration.mandatory}"
+                                                              columns="#{bindings.DrugsView1.hints.RouteOfAdministration.displayWidth}"
+                                                              maximumLength="#{bindings.DrugsView1.hints.RouteOfAdministration.precision}"
+                                                              shortDesc="#{bindings.DrugsView1.hints.RouteOfAdministration.tooltip}"
+                                                              id="it21">
+                                                    <f:validator binding="#{row.bindings.RouteOfAdministration.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.DrugsView1.hints.PackageSize.label}"
+                                                       id="c23">
+                                                <af:inputText value="#{row.bindings.PackageSize.inputValue}"
+                                                              label="#{bindings.DrugsView1.hints.PackageSize.label}"
+                                                              required="#{bindings.DrugsView1.hints.PackageSize.mandatory}"
+                                                              columns="#{bindings.DrugsView1.hints.PackageSize.displayWidth}"
+                                                              maximumLength="#{bindings.DrugsView1.hints.PackageSize.precision}"
+                                                              shortDesc="#{bindings.DrugsView1.hints.PackageSize.tooltip}"
+                                                              id="it22">
+                                                    <f:validator binding="#{row.bindings.PackageSize.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.DrugsView1.hints.PackageSize.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.DrugsView1.hints.Description.label}"
+                                                       id="c24">
+                                                <af:inputText value="#{row.bindings.Description.inputValue}"
+                                                              label="#{bindings.DrugsView1.hints.Description.label}"
+                                                              required="#{bindings.DrugsView1.hints.Description.mandatory}"
+                                                              columns="#{bindings.DrugsView1.hints.Description.displayWidth}"
+                                                              maximumLength="#{bindings.DrugsView1.hints.Description.precision}"
+                                                              shortDesc="#{bindings.DrugsView1.hints.Description.tooltip}"
+                                                              id="it23">
+                                                    <f:validator binding="#{row.bindings.Description.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                        </af:table>
+                                        <f:facet name="statusbar"/>
+                                    </af:panelCollection>
+                                </af:panelBox>
+                                <af:panelBox text="Pharmacies" id="pb2"
+                                             binding="#{backingBeanScope.backing_pharmacy.pb2}">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelCollection id="pc3" binding="#{backingBeanScope.backing_pharmacy.pc3}">
+                                        <f:facet name="menus"/>
+                                        <f:facet name="toolbar"/>
+                                        <f:facet name="statusbar"/>
+                                    </af:panelCollection>
+                                </af:panelBox>
+                                <af:panelCollection id="pc4" binding="#{backingBeanScope.backing_pharmacy.pc4}">
+                                    <f:facet name="menus"/>
+                                    <f:facet name="toolbar"/>
+                                    <f:facet name="statusbar"/>
+                                </af:panelCollection>
+                            </af:panelDashboard>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+                <f:facet name="accordion_menu"/>
+                <f:facet name="branding"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_pharmacy-->
+</f:view>

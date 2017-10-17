@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppointmentsView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <Variable
+    Name="start_time"
+    Kind="where"
+    Type="java.sql.Timestamp">
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="0"/>
+    </AttrArray>
+  </Variable>
+  <Variable
+    Name="end_time"
+    Kind="where"
+    Type="java.sql.Timestamp">
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="0"/>
+    </AttrArray>
+  </Variable>
+  <Variable
+    Name="time_zone"
+    Kind="where"
+    Type="java.lang.String">
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="0"/>
+    </AttrArray>
+  </Variable>
+  <ViewAccessor
+    Name="MedicalStaffView1"
+    ViewObjectName="model.MedicalStaffView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ClientsView1"
+    ViewObjectName="model.ClientsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ClinicsView1"
+    ViewObjectName="model.ClinicsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PaymentMethodsView1"
+    ViewObjectName="model.PaymentMethodsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ConsultationsView1"
+    ViewObjectName="model.ConsultationsView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_MedicalStaffId"
+    ListVOName="MedicalStaffView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MedicalStaffId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Firstname"/>
+      <Item Value="Lastname"/>
+      <Item Value="Othername"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ClientId"
+    ListVOName="ClientsView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClientId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+      <Item Value="OtherNames"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ClinicId"
+    ListVOName="ClinicsView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClinicId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ClinicName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PaymentMethodId"
+    ListVOName="PaymentMethodsView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PaymentMethodId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="PaymentMethod"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ConsultationId"
+    ListVOName="ConsultationsView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ConsultationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ConsultationName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Appointments"
+    Entity="model.Appointments"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Appointments"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="AppointmentDateTime"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AppointmentDateTime"
+    EntityUsage="Appointments"
+    AliasName="appointment_date_time"/>
+  <ViewAttribute
+    Name="StartDateTime"
+    PrecisionRule="true"
+    EntityAttrName="StartDateTime"
+    EntityUsage="Appointments"
+    AliasName="start_date_time"/>
+  <ViewAttribute
+    Name="EndDateTime"
+    PrecisionRule="true"
+    EntityAttrName="EndDateTime"
+    EntityUsage="Appointments"
+    AliasName="end_date_time"/>
+  <ViewAttribute
+    Name="ClientId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClientId"
+    EntityUsage="Appointments"
+    AliasName="client_id"
+    LOVName="LOV_ClientId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MedicalStaffId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="MedicalStaffId"
+    EntityUsage="Appointments"
+    AliasName="medical_staff_id"
+    LOVName="LOV_MedicalStaffId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ClinicId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClinicId"
+    EntityUsage="Appointments"
+    AliasName="clinic_id"
+    LOVName="LOV_ClinicId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="Appointments"
+    AliasName="description"/>
+  <ViewAttribute
+    Name="IsActive"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="Appointments"
+    AliasName="is_active"/>
+  <ViewAttribute
+    Name="TimeZone"
+    PrecisionRule="true"
+    EntityAttrName="TimeZone"
+    EntityUsage="Appointments"
+    AliasName="time_zone"/>
+  <ViewAttribute
+    Name="AppointmentId"
+    PrecisionRule="true"
+    EntityAttrName="AppointmentId"
+    EntityUsage="Appointments"
+    AliasName="appointment_id"/>
+  <ViewAttribute
+    Name="AppointmentOwnerId"
+    PrecisionRule="true"
+    EntityAttrName="AppointmentOwnerId"
+    EntityUsage="Appointments"
+    AliasName="appointment_owner_id"/>
+  <ViewAttribute
+    Name="PaymentMethodId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PaymentMethodId"
+    EntityUsage="Appointments"
+    AliasName="payment_method_id"
+    LOVName="LOV_PaymentMethodId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ConsultationId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ConsultationId"
+    EntityUsage="Appointments"
+    AliasName="consultation_id"
+    LOVName="LOV_ConsultationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="AppointmentsViewCriteria"
+    ViewObjectName="model.AppointmentsView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="AppointmentsViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="StartDateTime"
+        ViewAttribute="StartDateTime"
+        Operator="="
+        Conjunction="AND"
+        Value=":start_time"
+        GenerateIsNullClauseForBindVars="false"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="EndDateTime"
+        ViewAttribute="EndDateTime"
+        Operator="="
+        Conjunction="AND"
+        Value=":end_time"
+        GenerateIsNullClauseForBindVars="false"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="TimeZone"
+        ViewAttribute="TimeZone"
+        Operator="="
+        Conjunction="AND"
+        Value=":time_zone"
+        GenerateIsNullClauseForBindVars="false"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewLinkAccessor
+    Name="AppointmentsView"
+    ViewLink="model.FkAppointmentsMedicalStaffLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AppointmentsView1"
+    ViewLink="model.FkAppointmentsConsulationLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AppointmentsView2"
+    ViewLink="model.FkAppointmentsClinicsLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AppointmentsView3"
+    ViewLink="model.FkAppointmentsClientsLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

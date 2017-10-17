@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkInventoryReceivedInventoryItemsLink"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  EntityAssociation="model.FkInventoryReceivedInventoryItemsAssoc">
+  <ViewLinkDefEnd
+    Name="InventoryItemIdInventoryReceivedView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.InventoryReceivedView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="InventoryItemIdInventoryReceivedView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.InventoryReceivedView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="InventoryReceivedView1"
+    Cardinality="-1"
+    Owner="model.InventoryReceivedView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="InventoryReceivedView1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.InventoryReceivedView.InventoryItemId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

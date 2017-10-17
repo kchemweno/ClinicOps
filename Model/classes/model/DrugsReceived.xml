@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DrugsReceived"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="drugs_received"
+  AliasName="DrugsReceived"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="drugs_received"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DateReceived"
+    IsNotNull="true"
+    ColumnName="date_received"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="drugs_received"/>
+  <Attribute
+    Name="PharmacyId"
+    IsNotNull="true"
+    ColumnName="pharmacy_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="drugs_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DrugId"
+    IsNotNull="true"
+    ColumnName="drug_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="drugs_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SupplierId"
+    IsNotNull="true"
+    ColumnName="supplier_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="drugs_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ReceivingStaffId"
+    IsNotNull="true"
+    ColumnName="receiving_staff_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="drugs_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Quantity"
+    IsNotNull="true"
+    ColumnName="quantity"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="drugs_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PackagingSize"
+    Precision="100"
+    ColumnName="packaging_size"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="drugs_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CostPerUnit"
+    IsNotNull="true"
+    ColumnName="cost_per_unit"
+    SQLType="FLOAT"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    TableName="drugs_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BatchNumber"
+    Precision="50"
+    ColumnName="batch_number"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="drugs_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IsActive"
+    IsNotNull="true"
+    ColumnName="is_active"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="BIT"
+    TableName="drugs_received"/>
+  <Attribute
+    Name="Description"
+    Precision="150"
+    ColumnName="description"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="drugs_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DateManufactured"
+    IsNotNull="true"
+    ColumnName="date_manufactured"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="drugs_received"/>
+  <Attribute
+    Name="DateExpiry"
+    IsNotNull="true"
+    ColumnName="date_expiry"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="drugs_received"/>
+  <AccessorAttribute
+    Name="DrugsReceived"
+    Association="model.FkDrugsReceivedSuppliersAssoc"
+    AssociationEnd="model.FkDrugsReceivedSuppliersAssoc.DrugsReceived"
+    AssociationOtherEnd="model.FkDrugsReceivedSuppliersAssoc.SupplierIdDrugsReceived"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SupplierIdDrugsReceived"
+    Association="model.FkDrugsReceivedSuppliersAssoc"
+    AssociationEnd="model.FkDrugsReceivedSuppliersAssoc.SupplierIdDrugsReceived"
+    AssociationOtherEnd="model.FkDrugsReceivedSuppliersAssoc.DrugsReceived"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="DrugsReceived1"
+    Association="model.FkDrugsReceivedPharmaciesAssoc"
+    AssociationEnd="model.FkDrugsReceivedPharmaciesAssoc.DrugsReceived1"
+    AssociationOtherEnd="model.FkDrugsReceivedPharmaciesAssoc.PharmacyIdDrugsReceived"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PharmacyIdDrugsReceived"
+    Association="model.FkDrugsReceivedPharmaciesAssoc"
+    AssociationEnd="model.FkDrugsReceivedPharmaciesAssoc.PharmacyIdDrugsReceived"
+    AssociationOtherEnd="model.FkDrugsReceivedPharmaciesAssoc.DrugsReceived1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="DrugsReceived2"
+    Association="model.FkDrugsReceivedDrygsAssoc"
+    AssociationEnd="model.FkDrugsReceivedDrygsAssoc.DrugsReceived2"
+    AssociationOtherEnd="model.FkDrugsReceivedDrygsAssoc.DrugIdDrugsReceived"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="DrugIdDrugsReceived"
+    Association="model.FkDrugsReceivedDrygsAssoc"
+    AssociationEnd="model.FkDrugsReceivedDrygsAssoc.DrugIdDrugsReceived"
+    AssociationOtherEnd="model.FkDrugsReceivedDrygsAssoc.DrugsReceived2"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.DrugsReceived.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkDrugsReceivedDrygs">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_drugs_received__drygs"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.DrugsReceived.DrugId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkDrugsReceivedPharmacies">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_drugs_received__pharmacies"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.DrugsReceived.PharmacyId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkDrugsReceivedSuppliers">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_drugs_received__suppliers"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.DrugsReceived.SupplierId"/>
+    </AttrArray>
+  </Key>
+</Entity>

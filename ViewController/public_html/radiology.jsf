@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Radiology" id="d1" binding="#{backingBeanScope.backing_radiology.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_radiology.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_radiology.f1}">
+            <af:pageTemplate viewId="/main_template.jsf" id="pt1" binding="#{backingBeanScope.backing_radiology.pt1}">
+                <f:facet name="content">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_radiology.ps1}"
+                                      orientation="horizontal" splitterPosition="613">
+                        <f:facet name="first">
+                            <af:panelCollection id="pc1" binding="#{backingBeanScope.backing_radiology.pc1}">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar"/>
+                                <af:table value="#{bindings.RadiologyExamRequestsView1.collectionModel}" var="row"
+                                          rows="#{bindings.RadiologyExamRequestsView1.rangeSize}"
+                                          emptyText="#{bindings.RadiologyExamRequestsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.RadiologyExamRequestsView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.RadiologyExamRequestsView1.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.RadiologyExamRequestsView1.rangeSize}" id="t1"
+                                          binding="#{backingBeanScope.backing_radiology.t1}">
+                                    <af:column headerText="#{bindings.RadiologyExamRequestsView1.hints.ClientId.label}"
+                                               id="c1" width="100">
+                                        <af:inputText value="#{row.bindings.ClientId.inputValue}"
+                                                      label="#{bindings.RadiologyExamRequestsView1.hints.ClientId.label}"
+                                                      required="#{bindings.RadiologyExamRequestsView1.hints.ClientId.mandatory}"
+                                                      columns="#{bindings.RadiologyExamRequestsView1.hints.ClientId.displayWidth}"
+                                                      maximumLength="#{bindings.RadiologyExamRequestsView1.hints.ClientId.precision}"
+                                                      shortDesc="#{bindings.RadiologyExamRequestsView1.hints.ClientId.tooltip}"
+                                                      id="it1">
+                                            <f:validator binding="#{row.bindings.ClientId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.RadiologyExamRequestsView1.hints.ClientId.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.RadiologyExamRequestsView1.hints.DateRequested.label}"
+                                               id="c2" width="82">
+                                        <af:inputDate value="#{row.bindings.DateRequested.inputValue}"
+                                                      label="#{bindings.RadiologyExamRequestsView1.hints.DateRequested.label}"
+                                                      required="#{bindings.RadiologyExamRequestsView1.hints.DateRequested.mandatory}"
+                                                      columns="#{bindings.RadiologyExamRequestsView1.hints.DateRequested.displayWidth}"
+                                                      shortDesc="#{bindings.RadiologyExamRequestsView1.hints.DateRequested.tooltip}"
+                                                      id="id1">
+                                            <f:validator binding="#{row.bindings.DateRequested.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.RadiologyExamRequestsView1.hints.DateRequested.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.RadiologyExamRequestsView1.hints.RadilogyExamId.label}"
+                                               id="c3" width="118">
+                                        <af:inputText value="#{row.bindings.RadilogyExamId.inputValue}"
+                                                      label="#{bindings.RadiologyExamRequestsView1.hints.RadilogyExamId.label}"
+                                                      required="#{bindings.RadiologyExamRequestsView1.hints.RadilogyExamId.mandatory}"
+                                                      columns="#{bindings.RadiologyExamRequestsView1.hints.RadilogyExamId.displayWidth}"
+                                                      maximumLength="#{bindings.RadiologyExamRequestsView1.hints.RadilogyExamId.precision}"
+                                                      shortDesc="#{bindings.RadiologyExamRequestsView1.hints.RadilogyExamId.tooltip}"
+                                                      id="it2">
+                                            <f:validator binding="#{row.bindings.RadilogyExamId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.RadiologyExamRequestsView1.hints.RadilogyExamId.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.RadiologyExamRequestsView1.hints.RequestingDoctorId.label}"
+                                               id="c4" width="100">
+                                        <af:inputText value="#{row.bindings.RequestingDoctorId.inputValue}"
+                                                      label="#{bindings.RadiologyExamRequestsView1.hints.RequestingDoctorId.label}"
+                                                      required="#{bindings.RadiologyExamRequestsView1.hints.RequestingDoctorId.mandatory}"
+                                                      columns="#{bindings.RadiologyExamRequestsView1.hints.RequestingDoctorId.displayWidth}"
+                                                      maximumLength="#{bindings.RadiologyExamRequestsView1.hints.RequestingDoctorId.precision}"
+                                                      shortDesc="#{bindings.RadiologyExamRequestsView1.hints.RequestingDoctorId.tooltip}"
+                                                      id="it3">
+                                            <f:validator binding="#{row.bindings.RequestingDoctorId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.RadiologyExamRequestsView1.hints.RequestingDoctorId.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.RadiologyExamRequestsView1.hints.RequestingDoctorComments.label}"
+                                               id="c5" width="100">
+                                        <af:inputText value="#{row.bindings.RequestingDoctorComments.inputValue}"
+                                                      label="#{bindings.RadiologyExamRequestsView1.hints.RequestingDoctorComments.label}"
+                                                      required="#{bindings.RadiologyExamRequestsView1.hints.RequestingDoctorComments.mandatory}"
+                                                      columns="#{bindings.RadiologyExamRequestsView1.hints.RequestingDoctorComments.displayWidth}"
+                                                      maximumLength="#{bindings.RadiologyExamRequestsView1.hints.RequestingDoctorComments.precision}"
+                                                      shortDesc="#{bindings.RadiologyExamRequestsView1.hints.RequestingDoctorComments.tooltip}"
+                                                      id="it4">
+                                            <f:validator binding="#{row.bindings.RequestingDoctorComments.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.RadiologyExamRequestsView1.hints.DatePerformed.label}"
+                                               id="c6" width="100">
+                                        <af:inputDate value="#{row.bindings.DatePerformed.inputValue}"
+                                                      label="#{bindings.RadiologyExamRequestsView1.hints.DatePerformed.label}"
+                                                      required="#{bindings.RadiologyExamRequestsView1.hints.DatePerformed.mandatory}"
+                                                      columns="#{bindings.RadiologyExamRequestsView1.hints.DatePerformed.displayWidth}"
+                                                      shortDesc="#{bindings.RadiologyExamRequestsView1.hints.DatePerformed.tooltip}"
+                                                      id="id2">
+                                            <f:validator binding="#{row.bindings.DatePerformed.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.RadiologyExamRequestsView1.hints.DatePerformed.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.RadiologyExamRequestsView1.hints.RadiologistId.label}"
+                                               id="c7">
+                                        <af:inputText value="#{row.bindings.RadiologistId.inputValue}"
+                                                      label="#{bindings.RadiologyExamRequestsView1.hints.RadiologistId.label}"
+                                                      required="#{bindings.RadiologyExamRequestsView1.hints.RadiologistId.mandatory}"
+                                                      columns="#{bindings.RadiologyExamRequestsView1.hints.RadiologistId.displayWidth}"
+                                                      maximumLength="#{bindings.RadiologyExamRequestsView1.hints.RadiologistId.precision}"
+                                                      shortDesc="#{bindings.RadiologyExamRequestsView1.hints.RadiologistId.tooltip}"
+                                                      id="it5">
+                                            <f:validator binding="#{row.bindings.RadiologistId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.RadiologyExamRequestsView1.hints.RadiologistId.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.RadiologyExamRequestsView1.hints.RadiologistsComments.label}"
+                                               id="c8">
+                                        <af:inputText value="#{row.bindings.RadiologistsComments.inputValue}"
+                                                      label="#{bindings.RadiologyExamRequestsView1.hints.RadiologistsComments.label}"
+                                                      required="#{bindings.RadiologyExamRequestsView1.hints.RadiologistsComments.mandatory}"
+                                                      columns="#{bindings.RadiologyExamRequestsView1.hints.RadiologistsComments.displayWidth}"
+                                                      maximumLength="#{bindings.RadiologyExamRequestsView1.hints.RadiologistsComments.precision}"
+                                                      shortDesc="#{bindings.RadiologyExamRequestsView1.hints.RadiologistsComments.tooltip}"
+                                                      id="it6">
+                                            <f:validator binding="#{row.bindings.RadiologistsComments.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                                <f:facet name="statusbar"/>
+                            </af:panelCollection>
+                        </f:facet>
+                        <f:facet name="second"/>
+                    </af:panelSplitter>
+                </f:facet>
+                <f:facet name="accordion_menu"/>
+                <f:facet name="branding"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_radiology-->
+</f:view>

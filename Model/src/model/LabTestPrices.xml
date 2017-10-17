@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LabTestPrices"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="lab_test_prices"
+  AliasName="LabTestPrices"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="lab_test_prices"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LabTestId"
+    IsNotNull="true"
+    ColumnName="lab_test_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="lab_test_prices">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Price"
+    IsNotNull="true"
+    ColumnName="price"
+    SQLType="FLOAT"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    TableName="lab_test_prices">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DatePriceWasSet"
+    IsNotNull="true"
+    ColumnName="date_price_was_set"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="lab_test_prices"/>
+  <Attribute
+    Name="IsCurrentPrice"
+    IsNotNull="true"
+    ColumnName="is_current_price"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="BIT"
+    TableName="lab_test_prices"/>
+  <Attribute
+    Name="Comments"
+    Precision="150"
+    ColumnName="comments"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="lab_test_prices">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IsActive"
+    IsNotNull="true"
+    ColumnName="is_active"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="BIT"
+    TableName="lab_test_prices"/>
+  <AccessorAttribute
+    Name="LabTestPrices"
+    Association="model.FkLabTestPricesLabTestPricesAssoc"
+    AssociationEnd="model.FkLabTestPricesLabTestPricesAssoc.LabTestPrices"
+    AssociationOtherEnd="model.FkLabTestPricesLabTestPricesAssoc.LabTestIdLabTestPrices"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LabTestIdLabTestPrices"
+    Association="model.FkLabTestPricesLabTestPricesAssoc"
+    AssociationEnd="model.FkLabTestPricesLabTestPricesAssoc.LabTestIdLabTestPrices"
+    AssociationOtherEnd="model.FkLabTestPricesLabTestPricesAssoc.LabTestPrices"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.LabTestPrices.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkLabTestPricesLabTestPrices">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_lab_test_prices__lab_test_prices"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.LabTestPrices.LabTestId"/>
+    </AttrArray>
+  </Key>
+</Entity>

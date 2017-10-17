@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MedicalStaffView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="SpecialtiesView1"
+    ViewObjectName="model.SpecialtiesView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_SpecialtyId"
+    ListVOName="SpecialtiesView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SpecialtyId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SpecialtyName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="MedicalStaff"
+    Entity="model.MedicalStaff"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="MedicalStaff"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="Firstname"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Firstname"
+    EntityUsage="MedicalStaff"
+    AliasName="firstname"/>
+  <ViewAttribute
+    Name="Lastname"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Lastname"
+    EntityUsage="MedicalStaff"
+    AliasName="lastname"/>
+  <ViewAttribute
+    Name="Othername"
+    PrecisionRule="true"
+    EntityAttrName="Othername"
+    EntityUsage="MedicalStaff"
+    AliasName="othername"/>
+  <ViewAttribute
+    Name="Gender"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Gender"
+    EntityUsage="MedicalStaff"
+    AliasName="gender"/>
+  <ViewAttribute
+    Name="Phone"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Phone"
+    EntityUsage="MedicalStaff"
+    AliasName="phone"/>
+  <ViewAttribute
+    Name="Email"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="MedicalStaff"
+    AliasName="email"/>
+  <ViewAttribute
+    Name="DateOfBirth"
+    PrecisionRule="true"
+    EntityAttrName="DateOfBirth"
+    EntityUsage="MedicalStaff"
+    AliasName="date_of_birth"/>
+  <ViewAttribute
+    Name="SpecialtyId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SpecialtyId"
+    EntityUsage="MedicalStaff"
+    AliasName="specialty_id"
+    LOVName="LOV_SpecialtyId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IsActive"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="MedicalStaff"
+    AliasName="is_active"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="MedicalStaff"
+    AliasName="description"/>
+  <ViewLinkAccessor
+    Name="MedicalStaffView"
+    ViewLink="model.FkMedicalStaffSpecialtiesLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

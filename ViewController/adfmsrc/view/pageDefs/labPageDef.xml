@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="labPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="LabTestRequestsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="LabTestRequestsView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="LabTestRequestsView1Iterator" id="LabTestRequestsView1">
+      <nodeDefinition DefName="model.LabTestRequestsView" Name="LabTestRequestsView10">
+        <AttrNames>
+          <Item Value="ClientId"/>
+          <Item Value="DateOfLabTestRequest"/>
+          <Item Value="LabId"/>
+          <Item Value="LabTestId"/>
+          <Item Value="RequestingMedicalStaffId"/>
+          <Item Value="ImplementingMedicalStaffId"/>
+          <Item Value="DateOfLabTestResults"/>
+          <Item Value="TestResults"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TheatresView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="Theatres"
+    Entity="model.Theatres"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Theatres"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="TheatreName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TheatreName"
+    EntityUsage="Theatres"
+    AliasName="theatre_name"/>
+  <ViewAttribute
+    Name="Location"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Location"
+    EntityUsage="Theatres"
+    AliasName="location"/>
+  <ViewAttribute
+    Name="ContactPerson"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ContactPerson"
+    EntityUsage="Theatres"
+    AliasName="contact_person"/>
+  <ViewAttribute
+    Name="PhoneNumber"
+    PrecisionRule="true"
+    EntityAttrName="PhoneNumber"
+    EntityUsage="Theatres"
+    AliasName="phone_number"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="Theatres"
+    AliasName="description"/>
+  <ViewAttribute
+    Name="IsActive"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="Theatres"
+    AliasName="is_active"/>
+</ViewObject>

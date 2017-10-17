@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProceduresView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="Procedures"
+    Entity="model.Procedures"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Procedures"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="ProcedureName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProcedureName"
+    EntityUsage="Procedures"
+    AliasName="procedure_name"/>
+  <ViewAttribute
+    Name="ProcedureCode"
+    PrecisionRule="true"
+    EntityAttrName="ProcedureCode"
+    EntityUsage="Procedures"
+    AliasName="procedure_code"/>
+  <ViewAttribute
+    Name="Cost"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Cost"
+    EntityUsage="Procedures"
+    AliasName="cost"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="Procedures"
+    AliasName="description"/>
+  <ViewAttribute
+    Name="IsActive"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="Procedures"
+    AliasName="is_active"/>
+</ViewObject>

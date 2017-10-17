@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InventoryReceived"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="inventory_received"
+  AliasName="InventoryReceived"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="inventory_received"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InventoryItemId"
+    IsNotNull="true"
+    ColumnName="inventory_item_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="inventory_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DateReceived"
+    IsNotNull="true"
+    ColumnName="date_received"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="inventory_received"/>
+  <Attribute
+    Name="QuantityReceived"
+    IsNotNull="true"
+    ColumnName="quantity_received"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="inventory_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ReceivingStaffId"
+    IsNotNull="true"
+    ColumnName="receiving_staff_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="inventory_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SupplierId"
+    IsNotNull="true"
+    ColumnName="supplier_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="inventory_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IsActive"
+    IsNotNull="true"
+    ColumnName="is_active"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="BIT"
+    TableName="inventory_received"/>
+  <Attribute
+    Name="Description"
+    Precision="150"
+    ColumnName="description"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="inventory_received">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="InventoryReceived"
+    Association="model.FkInventoryReceivedSuppliersAssoc"
+    AssociationEnd="model.FkInventoryReceivedSuppliersAssoc.InventoryReceived"
+    AssociationOtherEnd="model.FkInventoryReceivedSuppliersAssoc.SupplierIdInventoryReceived"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SupplierIdInventoryReceived"
+    Association="model.FkInventoryReceivedSuppliersAssoc"
+    AssociationEnd="model.FkInventoryReceivedSuppliersAssoc.SupplierIdInventoryReceived"
+    AssociationOtherEnd="model.FkInventoryReceivedSuppliersAssoc.InventoryReceived"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InventoryReceived1"
+    Association="model.FkInventoryReceivedInventoryItemsAssoc"
+    AssociationEnd="model.FkInventoryReceivedInventoryItemsAssoc.InventoryReceived1"
+    AssociationOtherEnd="model.FkInventoryReceivedInventoryItemsAssoc.InventoryItemIdInventoryReceived"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="InventoryItemIdInventoryReceived"
+    Association="model.FkInventoryReceivedInventoryItemsAssoc"
+    AssociationEnd="model.FkInventoryReceivedInventoryItemsAssoc.InventoryItemIdInventoryReceived"
+    AssociationOtherEnd="model.FkInventoryReceivedInventoryItemsAssoc.InventoryReceived1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.InventoryReceived.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkInventoryReceivedInventoryItems">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_inventory_received__inventory_items"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.InventoryReceived.InventoryItemId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkInventoryReceivedSuppliers">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_inventory_received__suppliers"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.InventoryReceived.SupplierId"/>
+    </AttrArray>
+  </Key>
+</Entity>

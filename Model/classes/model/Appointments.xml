@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Appointments"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="appointments"
+  AliasName="Appointments"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="appointments"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AppointmentDateTime"
+    IsNotNull="true"
+    ColumnName="appointment_date_time"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="DATETIME"
+    TableName="appointments"/>
+  <Attribute
+    Name="StartDateTime"
+    ColumnName="start_date_time"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="DATETIME"
+    TableName="appointments"/>
+  <Attribute
+    Name="EndDateTime"
+    ColumnName="end_date_time"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="DATETIME"
+    TableName="appointments"/>
+  <Attribute
+    Name="ClientId"
+    IsNotNull="true"
+    ColumnName="client_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="appointments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MedicalStaffId"
+    IsNotNull="true"
+    ColumnName="medical_staff_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="appointments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ClinicId"
+    IsNotNull="true"
+    ColumnName="clinic_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="appointments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="150"
+    ColumnName="description"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="appointments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IsActive"
+    IsNotNull="true"
+    ColumnName="is_active"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="BIT"
+    TableName="appointments"/>
+  <Attribute
+    Name="TimeZone"
+    Precision="100"
+    ColumnName="time_zone"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="appointments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AppointmentId"
+    Precision="10"
+    ColumnName="appointment_id"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="appointments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AppointmentOwnerId"
+    Precision="10"
+    ColumnName="appointment_owner_id"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="appointments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PaymentMethodId"
+    IsNotNull="true"
+    ColumnName="payment_method_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="appointments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ConsultationId"
+    IsNotNull="true"
+    ColumnName="consultation_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="appointments">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Appointments"
+    Association="model.FkAppointmentsMedicalStaffAssoc"
+    AssociationEnd="model.FkAppointmentsMedicalStaffAssoc.Appointments"
+    AssociationOtherEnd="model.FkAppointmentsMedicalStaffAssoc.MedicalStaffIdAppointments"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="MedicalStaffIdAppointments"
+    Association="model.FkAppointmentsMedicalStaffAssoc"
+    AssociationEnd="model.FkAppointmentsMedicalStaffAssoc.MedicalStaffIdAppointments"
+    AssociationOtherEnd="model.FkAppointmentsMedicalStaffAssoc.Appointments"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Appointments1"
+    Association="model.FkAppointmentsConsulationAssoc"
+    AssociationEnd="model.FkAppointmentsConsulationAssoc.Appointments1"
+    AssociationOtherEnd="model.FkAppointmentsConsulationAssoc.ConsultationIdAppointments"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ConsultationIdAppointments"
+    Association="model.FkAppointmentsConsulationAssoc"
+    AssociationEnd="model.FkAppointmentsConsulationAssoc.ConsultationIdAppointments"
+    AssociationOtherEnd="model.FkAppointmentsConsulationAssoc.Appointments1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Appointments2"
+    Association="model.FkAppointmentsClinicsAssoc"
+    AssociationEnd="model.FkAppointmentsClinicsAssoc.Appointments2"
+    AssociationOtherEnd="model.FkAppointmentsClinicsAssoc.ClinicIdAppointments"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ClinicIdAppointments"
+    Association="model.FkAppointmentsClinicsAssoc"
+    AssociationEnd="model.FkAppointmentsClinicsAssoc.ClinicIdAppointments"
+    AssociationOtherEnd="model.FkAppointmentsClinicsAssoc.Appointments2"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Appointments3"
+    Association="model.FkAppointmentsClientsAssoc"
+    AssociationEnd="model.FkAppointmentsClientsAssoc.Appointments3"
+    AssociationOtherEnd="model.FkAppointmentsClientsAssoc.ClientIdAppointments"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ClientIdAppointments"
+    Association="model.FkAppointmentsClientsAssoc"
+    AssociationEnd="model.FkAppointmentsClientsAssoc.ClientIdAppointments"
+    AssociationOtherEnd="model.FkAppointmentsClientsAssoc.Appointments3"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Appointments.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAppointmentsClients">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_appointments-clients"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Appointments.ClientId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAppointmentsClinics">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_appointments__clinics"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Appointments.ClinicId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAppointmentsConsulation">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_appointments__consulation"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Appointments.ConsultationId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAppointmentsMedicalStaff">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_appointments_medical_staff"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Appointments.MedicalStaffId"/>
+    </AttrArray>
+  </Key>
+</Entity>

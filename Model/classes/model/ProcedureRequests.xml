@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProcedureRequests"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="procedure_requests"
+  AliasName="ProcedureRequests"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="procedure_requests"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProcedureId"
+    IsNotNull="true"
+    ColumnName="procedure_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="procedure_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TheatreId"
+    IsNotNull="true"
+    ColumnName="theatre_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="procedure_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AppointmentId"
+    IsNotNull="true"
+    ColumnName="appointment_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="procedure_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ClientId"
+    IsNotNull="true"
+    ColumnName="client_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="procedure_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RequestingMedicalStaffId"
+    ColumnName="requesting_medical_staff_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="procedure_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RequestingMedicalStaffComments"
+    Precision="250"
+    ColumnName="requesting_medical_staff_comments"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="procedure_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PerformingMedicalStaffId"
+    ColumnName="performing_medical_staff_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="procedure_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PerformingMedicalStaffComments"
+    Precision="250"
+    ColumnName="performing_medical_staff_comments"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="procedure_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProcedureResolved"
+    IsNotNull="true"
+    ColumnName="procedure_resolved"
+    SQLType="TINYINT"
+    Type="java.lang.Integer"
+    ColumnType="TINYINT"
+    TableName="procedure_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IsActive"
+    IsNotNull="true"
+    ColumnName="is_active"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="BIT"
+    TableName="procedure_requests"/>
+  <Attribute
+    Name="DatePerformed"
+    ColumnName="date_performed"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="procedure_requests"/>
+  <Attribute
+    Name="DateRequested"
+    IsNotNull="true"
+    ColumnName="date_requested"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="procedure_requests"/>
+  <AccessorAttribute
+    Name="ProcedureRequests"
+    Association="model.FkProcedureRequestsProceduresAssoc"
+    AssociationEnd="model.FkProcedureRequestsProceduresAssoc.ProcedureRequests"
+    AssociationOtherEnd="model.FkProcedureRequestsProceduresAssoc.ProcedureIdProcedureRequests"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ProcedureIdProcedureRequests"
+    Association="model.FkProcedureRequestsProceduresAssoc"
+    AssociationEnd="model.FkProcedureRequestsProceduresAssoc.ProcedureIdProcedureRequests"
+    AssociationOtherEnd="model.FkProcedureRequestsProceduresAssoc.ProcedureRequests"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProcedureRequests1"
+    Association="model.FkProcedureRequestsAppointmentsAssoc"
+    AssociationEnd="model.FkProcedureRequestsAppointmentsAssoc.ProcedureRequests1"
+    AssociationOtherEnd="model.FkProcedureRequestsAppointmentsAssoc.AppointmentIdProcedureRequests"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="AppointmentIdProcedureRequests"
+    Association="model.FkProcedureRequestsAppointmentsAssoc"
+    AssociationEnd="model.FkProcedureRequestsAppointmentsAssoc.AppointmentIdProcedureRequests"
+    AssociationOtherEnd="model.FkProcedureRequestsAppointmentsAssoc.ProcedureRequests1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ProcedureRequests.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkProcedureRequestsAppointments">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_procedure_requests__appointments"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ProcedureRequests.AppointmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkProcedureRequestsProcedures">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_procedure_requests__procedures"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ProcedureRequests.ProcedureId"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="RadiologyExamRequests"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="radiology_exam_requests"
+  AliasName="RadiologyExamRequests"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="radiology_exam_requests"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ClientId"
+    IsNotNull="true"
+    ColumnName="client_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="radiology_exam_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RadilogyExamId"
+    IsNotNull="true"
+    ColumnName="radilogy_exam_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="radiology_exam_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RequestingDoctorId"
+    IsNotNull="true"
+    ColumnName="requesting_doctor_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="radiology_exam_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RequestingDoctorComments"
+    Precision="250"
+    ColumnName="requesting_doctor_comments"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="radiology_exam_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RadiologistId"
+    ColumnName="radiologist_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="radiology_exam_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RadiologistsComments"
+    Precision="250"
+    ColumnName="radiologists_comments"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="radiology_exam_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IsActive"
+    IsNotNull="true"
+    ColumnName="is_active"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="BIT"
+    TableName="radiology_exam_requests"/>
+  <Attribute
+    Name="AppointmentId"
+    IsNotNull="true"
+    ColumnName="appointment_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="radiology_exam_requests">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DateRequested"
+    IsNotNull="true"
+    ColumnName="date_requested"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="radiology_exam_requests"/>
+  <Attribute
+    Name="DatePerformed"
+    ColumnName="date_performed"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="radiology_exam_requests"/>
+  <AccessorAttribute
+    Name="RadiologyExamRequests"
+    Association="model.FkRadiologyExamRequestsRadiologyExamsAssoc"
+    AssociationEnd="model.FkRadiologyExamRequestsRadiologyExamsAssoc.RadiologyExamRequests"
+    AssociationOtherEnd="model.FkRadiologyExamRequestsRadiologyExamsAssoc.RadilogyExamIdRadiologyExamRequests"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="RadilogyExamIdRadiologyExamRequests"
+    Association="model.FkRadiologyExamRequestsRadiologyExamsAssoc"
+    AssociationEnd="model.FkRadiologyExamRequestsRadiologyExamsAssoc.RadilogyExamIdRadiologyExamRequests"
+    AssociationOtherEnd="model.FkRadiologyExamRequestsRadiologyExamsAssoc.RadiologyExamRequests"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="RadiologyExamRequests1"
+    Association="model.FkRadiologyExamRequestsAppointmentsAssoc"
+    AssociationEnd="model.FkRadiologyExamRequestsAppointmentsAssoc.RadiologyExamRequests1"
+    AssociationOtherEnd="model.FkRadiologyExamRequestsAppointmentsAssoc.AppointmentIdRadiologyExamRequests"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="AppointmentIdRadiologyExamRequests"
+    Association="model.FkRadiologyExamRequestsAppointmentsAssoc"
+    AssociationEnd="model.FkRadiologyExamRequestsAppointmentsAssoc.AppointmentIdRadiologyExamRequests"
+    AssociationOtherEnd="model.FkRadiologyExamRequestsAppointmentsAssoc.RadiologyExamRequests1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.RadiologyExamRequests.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkRadiologyExamRequestsAppointments">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_radiology_exam_requests__appointments"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.RadiologyExamRequests.AppointmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkRadiologyExamRequestsRadiologyExams">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_radiology_exam_requests__radiology_exams"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.RadiologyExamRequests.RadilogyExamId"/>
+    </AttrArray>
+  </Key>
+</Entity>

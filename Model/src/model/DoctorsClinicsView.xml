@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DoctorsClinicsView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="DoctorsClinics"
+    Entity="model.DoctorsClinics"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="DoctorsClinics"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="MedicalStaffId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="MedicalStaffId"
+    EntityUsage="DoctorsClinics"
+    AliasName="medical_staff_id"/>
+  <ViewAttribute
+    Name="ClinicId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClinicId"
+    EntityUsage="DoctorsClinics"
+    AliasName="clinic_id"/>
+  <ViewAttribute
+    Name="IsActive"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="DoctorsClinics"
+    AliasName="is_active"/>
+</ViewObject>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ClientAppointments"
+  Version="12.2.1.0.31"
+  Extends="model.AppointmentsView"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.ClientAppointments_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="bind_variable_client_id"
+    Kind="where"
+    Type="java.lang.Integer">
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="0"/>
+    </AttrArray>
+  </Variable>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+  <DeclarativeWhereClause
+    Name="DeclarativeWhereClause">
+    <ViewCriteria
+      Name="ClientAppointmentsWhereCriteria"
+      ViewObjectName="model.ClientAppointments"
+      Conjunction="AND"
+      Mode="3">
+      <ViewCriteria
+        Name="ClientAppointmentsSubCriteria1"
+        ViewObjectName="model.ClientAppointments"
+        Conjunction="AND">
+        <ViewCriteriaRow
+          Name="ClientAppointmentsSubCriteria1_row_0"
+          UpperColumns="1">
+          <ViewCriteriaItem
+            Name="ClientId"
+            ViewAttribute="ClientId"
+            Operator="="
+            Conjunction="AND"
+            Value=":bind_variable_client_id"
+            GenerateIsNullClauseForBindVars="false"
+            IsBindVarValue="true"
+            Required="Optional"/>
+        </ViewCriteriaRow>
+      </ViewCriteria>
+    </ViewCriteria>
+  </DeclarativeWhereClause>
+</ViewObject>

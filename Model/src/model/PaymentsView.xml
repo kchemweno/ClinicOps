@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PaymentsView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="ClientsView1"
+    ViewObjectName="model.ClientsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ClinicsView1"
+    ViewObjectName="model.ClinicsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PaymentMethodsView1"
+    ViewObjectName="model.PaymentMethodsView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ClientId"
+    ListVOName="ClientsView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClientId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+      <Item Value="OtherNames"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PaymentMethodId"
+    ListVOName="PaymentMethodsView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PaymentMethodId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="PaymentMethod"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ClinicId"
+    ListVOName="ClinicsView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClinicId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ClinicName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Payments"
+    Entity="model.Payments"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Payments"
+    AliasName="id"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="ClientId"
+    PrecisionRule="true"
+    EntityAttrName="ClientId"
+    EntityUsage="Payments"
+    AliasName="client_id"
+    LOVName="LOV_ClientId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ClinicId"
+    PrecisionRule="true"
+    EntityAttrName="ClinicId"
+    EntityUsage="Payments"
+    AliasName="clinic_id"
+    LOVName="LOV_ClinicId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PaymentMethodId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PaymentMethodId"
+    EntityUsage="Payments"
+    AliasName="payment_method_id"
+    LOVName="LOV_PaymentMethodId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DatePaid"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DatePaid"
+    EntityUsage="Payments"
+    AliasName="date_paid"/>
+  <ViewAttribute
+    Name="AmountPaid"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AmountPaid"
+    EntityUsage="Payments"
+    AliasName="amount_paid"/>
+  <ViewAttribute
+    Name="InvoiceId"
+    PrecisionRule="true"
+    EntityAttrName="InvoiceId"
+    EntityUsage="Payments"
+    AliasName="invoice_id"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="Payments"
+    AliasName="description"/>
+  <ViewAttribute
+    Name="IsActive"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="Payments"
+    AliasName="is_active"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="PaymentReferenceNumber"
+    PrecisionRule="true"
+    EntityAttrName="PaymentReferenceNumber"
+    EntityUsage="Payments"
+    AliasName="payment_reference_number"/>
+  <ViewAttribute
+    Name="PaidByName"
+    PrecisionRule="true"
+    EntityAttrName="PaidByName"
+    EntityUsage="Payments"
+    AliasName="paid_by_name"/>
+  <ViewAttribute
+    Name="PaymentTimestamp"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PaymentTimestamp"
+    EntityUsage="Payments"
+    AliasName="payment_timestamp"
+    IsUpdateable="while_insert"/>
+  <ViewLinkAccessor
+    Name="PaymentsView"
+    ViewLink="model.FkPaymentsPaymentMethodIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PaymentsView1"
+    ViewLink="model.FkPaymentsInvoicesLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PaymentsView2"
+    ViewLink="model.FkPaymentsClientsLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

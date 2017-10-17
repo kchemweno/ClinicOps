@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkPaymentsInvoicesAssoc"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="InvoiceIdPayments"
+    Cardinality="1"
+    Source="true"
+    Owner="model.Payments">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="InvoiceIdPayments"/>
+      <Attr Name="_foreignKey" Value="model.Payments.Primary1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Payments.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Payments1"
+    Cardinality="-1"
+    Owner="model.Payments">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Payments1"/>
+      <Attr Name="_foreignKey" Value="model.Payments.FkPaymentsInvoices"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Payments.InvoiceId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

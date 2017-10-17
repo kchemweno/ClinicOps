@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="paymentPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PaymentsView1" RangeSize="25" DataControl="AppModuleDataControl" id="PaymentsView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PaymentsView1Iterator" id="PaymentsView1">
+      <nodeDefinition DefName="model.PaymentsView" Name="PaymentsView10">
+        <AttrNames>
+          <Item Value="ClientId"/>
+          <Item Value="ClinicId"/>
+          <Item Value="PaymentMethodId"/>
+          <Item Value="DatePaid"/>
+          <Item Value="AmountPaid"/>
+          <Item Value="PaymentReferenceNumber"/>
+          <Item Value="PaidByName"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="PaymentsView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="PaymentsView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

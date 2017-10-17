@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description>Main template</afc:description>
+            <afc:display-name>main_template</afc:display-name>
+            <afc:facet>
+                <afc:description>Main content area</afc:description>
+                <afc:facet-name>content</afc:facet-name>
+            </afc:facet>
+            <afc:facet>
+                <afc:description>
+                    Left side bar menu
+                </afc:description>
+                <afc:facet-name>
+                    accordion_menu
+                </afc:facet-name>
+            </afc:facet>
+            <afc:facet>
+                <afc:description>
+                    Logo area
+                </afc:description>
+                <afc:facet-name>
+                    branding
+                </afc:facet-name>
+            </afc:facet>
+            <afc:attribute>
+                <afc:attribute-name>title</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+            </afc:attribute>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelGridLayout id="pt_pgl2">
+        <af:gridRow height="50px" id="pt_gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="pt_gc1"
+                         inlineStyle="background-color:SteelBlue;">
+                <!-- Header -->
+                <af:panelGridLayout id="pt_pgl3">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr4">
+                        <af:gridCell marginStart="5px" width="10%" id="pt_gc5">
+                            <af:image source="#{resource['images:ClinicOps360_transparent.png']}" id="pt_i1"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="25%" id="pt_gc6"/>
+                        <af:gridCell marginStart="5px" width="25%" id="pt_gc7" valign="middle" halign="end">
+                            <af:outputText value="Welcome;  #{securityContext.userName}" id="pt_ot1"
+                                           inlineStyle="font-size:large; color:White;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="dontCare" marginEnd="5px" id="pt_gc8"/>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow height="100%" id="pt_gr3">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="pt_gc2">
+                <af:decorativeBox theme="dark" id="pt_db1">
+                    <f:facet name="center">
+                        <af:panelGridLayout id="pt_pgl1">
+                            <af:gridRow height="100%" id="pt_gr2">
+                                <af:gridCell width="150px" halign="stretch" valign="stretch" id="pt_gc3">
+                                    <!-- Left -->
+                                    <af:panelAccordion discloseMany="true" id="pt_pa1">
+                                        <af:showDetailItem id="patients" text="Patients"
+                                                           stretchChildren="none"
+                                                           icon="#{resource['images:patients.png']}"
+                                                           inlineStyle="text-align:center;">
+                                            <af:link text="All Patients" id="pt_l2"
+                                                     destination="patients.jsf"
+                                                     icon="#{resource['images:people_1.png']}"/>
+                                            <af:spacer width="140" height="10" id="pt_s1"/>
+                                            <af:link text="Appointments" id="pt_l3"
+                                                     destination="appointments.jsf"
+                                                     icon="#{resource['images:appointments.png']}"/>
+                                            <af:spacer width="10" height="10" id="pt_s2"/>
+                                            <af:link text="Diagnosis" id="pt_l1" destination="diagnosis.jsf"
+                                                     icon="#{resource['images:diagnosis.png']}"/>
+                                        </af:showDetailItem>
+                                        <af:showDetailItem id="pt_sdi2" text="Staff"
+                                                           stretchChildren="none"
+                                                           icon="#{resource['images:people_2.png']}"
+                                                           inlineStyle="text-align:center;">
+                                            <af:link text="All Staff" id="pt_l4"
+                                                     icon="#{resource['images:people_2.png']}"/>
+                                        </af:showDetailItem>
+                                        <af:showDetailItem id="finance" text="Finance"
+                                                           icon="#{resource['images:money_1.png']}"
+                                                           inlineStyle="text-align:center;">
+                                            <af:link text="Invoices" id="pt_l5"
+                                                     icon="#{resource['images:invoice_1.png']}"/>
+                                            <af:spacer width="10" height="10" id="pt_s3"/>
+                                            <af:link text="Payments" id="pt_l6" destination="payments.jsf"
+                                                     icon="#{resource['images:money_2.png']}"/>
+                                        </af:showDetailItem>
+                                        <af:showDetailItem id="departments" text="Departments"
+                                                           icon="#{resource['images:department.png']}"
+                                                           inlineStyle="text-align:center;">
+                                            <af:link text="Pharmacy" id="pt_l7"
+                                                     icon="#{resource['images:pharmacy.png']}"/>
+                                            <af:spacer width="10" height="10" id="pt_s4"/>
+                                            <af:link text="Lab" id="pt_l8" destination="lab.jsf"
+                                                     icon="#{resource['images:microscope.png']}"/>
+                                            <af:spacer width="10" height="10" id="pt_s5"/>
+                                            <af:link text="Radiaology" id="pt_l9" destination="radiology.jsf"
+                                                     icon="#{resource['images:radiology.png']}"/>
+                                        </af:showDetailItem>
+                                        <af:showDetailItem id="pt_sdi1" text="Reports"
+                                                           icon="#{resource['images:report.png']}"
+                                                           inlineStyle="text-align:center;">
+                                            <af:link text="Dashboard" id="pt_l10" destination="dashboard.jsf"
+                                                     icon="#{resource['images:dashboard.png']}"/>
+                                            <af:spacer width="10" height="10" id="pt_s6"/>
+                                        </af:showDetailItem>
+                                    </af:panelAccordion>
+                                </af:gridCell>
+                                <af:gridCell width="100%" halign="stretch" valign="stretch" id="pt_gc4">
+                                    <af:decorativeBox theme="medium" id="pt_db2">
+                                        <f:facet name="center">
+                                            <!-- Content -->
+                                            <af:facetRef facetName="content"/>
+                                        </f:facet>
+                                    </af:decorativeBox>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                    </f:facet>
+                </af:decorativeBox>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</af:pageTemplateDef>

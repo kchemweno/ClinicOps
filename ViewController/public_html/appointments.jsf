@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Appointments" id="d1" binding="#{backingBeanScope.backing_appointmentscalendar.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_appointmentscalendar.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_appointmentscalendar.f1}">
+            <af:pageTemplate viewId="/main_template.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_appointmentscalendar.pt1}">
+                <f:facet name="content">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_appointmentscalendar.ps1}"
+                                      splitterPosition="840">
+                        <f:facet name="first">
+                            <af:panelTabbed position="above" id="pt2"
+                                            binding="#{backingBeanScope.backing_appointmentscalendar.pt2}">
+                                <af:showDetailItem id="tab1" text="Calendar View" disclosed="true"
+                                                   binding="#{backingBeanScope.backing_appointmentscalendar.tab1}"
+                                                   styleClass="afstretchwidth">
+                                   
+                                    <af:panelStretchLayout id="psl1" binding="#{backingBeanScope.backing_appointmentscalendar.psl1}"
+                                                           startWidth="0px" bottomHeight="0px" endWidth="0px"
+                                                           topHeight="0px" inlineStyle="width:1060px; height:869px;"
+                                                           styleClass="AFStretchWidth">
+                                <f:facet name="start"/>
+                                <f:facet name="end"/>
+                                <f:facet name="top"/>
+                                <f:facet name="bottom"/>
+                                <f:facet name="center">                                            
+                                            <af:calendar value="#{bindings.AppointmentsView1.calendarModel}" id="c1"
+                                                 binding="#{backingBeanScope.backing_appointmentscalendar.c1}"
+                                                 styleClass="AFStretchwidth"/>
+                                </f:facet>
+                                    </af:panelStretchLayout>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="tab2" text="Table View"
+                                                   binding="#{backingBeanScope.backing_appointmentscalendar.tab2}">
+                                    <af:panelCollection id="pc1"
+                                                        binding="#{backingBeanScope.backing_appointmentscalendar.pc1}"
+                                                        inlineStyle="width:1061px; height:358px;">
+                                       <!-- <f:facet name="menus"/> -->
+                                       <!-- <f:facet name="toolbar"/> -->
+                                       <!-- <f:facet name="statusbar"/> -->
+                                    </af:panelCollection>
+                                </af:showDetailItem>
+                            </af:panelTabbed>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_appointmentscalendar-->
+</f:view>

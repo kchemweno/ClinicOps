@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="patientsPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ClientsView1" RangeSize="25" DataControl="AppModuleDataControl" id="ClientsView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ClientsView1Iterator" id="ClientsView1">
+      <nodeDefinition DefName="model.ClientsView" Name="ClientsView10">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="OtherNames"/>
+          <Item Value="Gender"/>
+          <Item Value="Mobile"/>
+          <Item Value="Email"/>
+          <Item Value="DateOfBirth"/>
+          <Item Value="OrganisationId"/>
+          <Item Value="ClientPicture"/>
+          <Item Value="Consenting"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProcedurePrices"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="procedure_prices"
+  AliasName="ProcedurePrices"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="procedure_prices"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProcedureId"
+    IsNotNull="true"
+    ColumnName="procedure_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="procedure_prices">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Price"
+    IsNotNull="true"
+    ColumnName="price"
+    SQLType="FLOAT"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    TableName="procedure_prices">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DatePriceWasSet"
+    ColumnName="date_price_was_set"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="procedure_prices"/>
+  <Attribute
+    Name="IsCurrentPrice"
+    IsNotNull="true"
+    ColumnName="is_current_price"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="BIT"
+    TableName="procedure_prices"/>
+  <Attribute
+    Name="TheatreId"
+    IsNotNull="true"
+    ColumnName="theatre_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="procedure_prices">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Comments"
+    Precision="150"
+    ColumnName="comments"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="procedure_prices">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IsActive"
+    IsNotNull="true"
+    ColumnName="is_active"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="BIT"
+    TableName="procedure_prices"/>
+  <AccessorAttribute
+    Name="ProcedurePrices"
+    Association="model.FkProcedurePricesProiceduresAssoc"
+    AssociationEnd="model.FkProcedurePricesProiceduresAssoc.ProcedurePrices"
+    AssociationOtherEnd="model.FkProcedurePricesProiceduresAssoc.ProcedureIdProcedurePrices"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ProcedureIdProcedurePrices"
+    Association="model.FkProcedurePricesProiceduresAssoc"
+    AssociationEnd="model.FkProcedurePricesProiceduresAssoc.ProcedureIdProcedurePrices"
+    AssociationOtherEnd="model.FkProcedurePricesProiceduresAssoc.ProcedurePrices"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ProcedurePrices.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkProcedurePricesProicedures">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_procedure_prices__proicedures"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ProcedurePrices.ProcedureId"/>
+    </AttrArray>
+  </Key>
+</Entity>

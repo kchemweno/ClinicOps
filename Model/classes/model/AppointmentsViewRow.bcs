@@ -1,0 +1,12 @@
+//Groovy Scripts for model.AppointmentsView
+
+package model
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="TimeZone")
+def TimeZone_ExpressionScript_Expression()
+{
+Timezone.getDefault().getID()
+}
+

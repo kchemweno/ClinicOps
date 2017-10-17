@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkInventoryMovementInventoryItemsLink"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  EntityAssociation="model.FkInventoryMovementInventoryItemsAssoc">
+  <ViewLinkDefEnd
+    Name="InventoryItemIdInventoryMovementView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.InventoryMovementView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="InventoryItemIdInventoryMovementView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.InventoryMovementView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="InventoryMovementView"
+    Cardinality="-1"
+    Owner="model.InventoryMovementView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="InventoryMovementView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.InventoryMovementView.InventoryItemId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LabTestsView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="LabTests"
+    Entity="model.LabTests"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="LabTests"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="LabTestCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LabTestCode"
+    EntityUsage="LabTests"
+    AliasName="lab_test_code"/>
+  <ViewAttribute
+    Name="LabTestName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LabTestName"
+    EntityUsage="LabTests"
+    AliasName="lab_test_name"/>
+  <ViewAttribute
+    Name="Cost"
+    PrecisionRule="true"
+    EntityAttrName="Cost"
+    EntityUsage="LabTests"
+    AliasName="cost"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="LabTests"
+    AliasName="description"/>
+  <ViewAttribute
+    Name="IsActive"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IsActive"
+    EntityUsage="LabTests"
+    AliasName="is_active"/>
+</ViewObject>
